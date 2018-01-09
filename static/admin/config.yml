@@ -12,7 +12,7 @@ collections:
     create: true
     slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
     fields:
-      - {label: "Path", name: "path", widget: "hidden", default: "{{slug}}"}
+      - {label: "Path", name: "path", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Upload", name: "file", widget: "file"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
