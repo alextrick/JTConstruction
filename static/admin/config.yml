@@ -8,11 +8,11 @@ public_folder: "images/uploads"
 collections:
   - name: "gallery"
     label: "Gallery"
-    folder: "_gallery/posts"
+    folder: "src/pages/posts"
     create: true
     slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "gallery"}
+      - {label: "Path", name: "path", widget: "hidden", default: "{{slug}}"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Upload", name: "file", widget: "file"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
