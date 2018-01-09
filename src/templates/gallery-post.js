@@ -6,13 +6,26 @@ import Helmet from 'react-helmet';
 export default function Template({
   data
 }) {
-  const { markdownRemark: post } = data;
+  const { frontmatter } = data.markdownRemark;
+  const gal = frontmatter.galleryImages;
+
   return (
-    <div className="section">
-      <Helmet title={`Your Blog Name - ${post.frontmatter.title}`} />
+    <div className="section gallery">
+      <Helmet title={`Your Blog Name - ${frontmatter.title}`} />
       <div className="blog-post">
-        <h1>{post.frontmatter.title}</h1>
-        <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <h1>{frontmatter.title}</h1>
+        <img src={frontmatter.thumbnail} />
+        <div className="grid">
+          {gal
+            // .filter(image => image.length > 0)
+            .map((image, index) => {
+              return (
+                <img src={image} key={index} className="img"/>
+              )
+            })
+          }
+        </div>
+        <p>{frontmatter.description}</p>
       </div>
     </div>
   );
@@ -26,6 +39,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        thumbnail
+        description
+        galleryImages
       }
     }
   }

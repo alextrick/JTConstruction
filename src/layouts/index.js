@@ -21,9 +21,9 @@ const Footer = () => (
   <div className="footer">
     <p>Joe Thomas Construction</p>
     <ul>
-      <li><Link to="#"><i class="fa fa-twitter-square fa-2x">T</i></Link></li>
-      <li><Link to="#"><i class="fa fa-facebook-square fa-2x">F</i></Link></li>
-      <li><Link to="#"><i class="fa fa-snapchat-square fa-2x">I</i></Link></li>
+      <li><Link to="#"><i className="fa fa-twitter-square fa-2x">T</i></Link></li>
+      <li><Link to="#"><i className="fa fa-facebook-square fa-2x">F</i></Link></li>
+      <li><Link to="#"><i className="fa fa-snapchat-square fa-2x">I</i></Link></li>
     </ul>
   </div>
 )
