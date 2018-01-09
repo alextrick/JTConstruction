@@ -14,7 +14,8 @@
     "gatsby-remark-images": "^1.5.36",
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.26",
-    "gatsby-transformer-sharp": "^1.6.16"
+    "gatsby-transformer-sharp": "^1.6.16",
+    "react-id-swiper": "^1.5.7"
   },
   "keywords": [
     "gatsby"

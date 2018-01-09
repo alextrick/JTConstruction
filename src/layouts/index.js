@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 
 import "./normalize.css";
 import './index.css';
+import './swiper.min.css';
 
 const Header = () => (
   <div className="header">
