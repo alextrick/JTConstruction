@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "static/images/uploads"
+public_folder: "images/uploads"
+
+collections:
+  - name: "gallery"
+    label: "Gallery"
+    folder: "_gallery/posts"
+    create: true
+    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "gallery"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Upload", name: "file", widget: "file"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Gallery", name: "galleryImages", widget: "list", field: 
+          - {label: Image, name: image, widget: image}
+        }
+      - {label: "Description", name: "description", widget: "markdown"}
+
+      

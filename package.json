@@ -8,9 +8,12 @@
     "gatsby-cli": "^1.1.28",
     "gatsby-image": "^1.0.31",
     "gatsby-link": "^1.6.32",
+    "gatsby-plugin-catch-links": "^1.0.14",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sharp": "^1.6.24",
+    "gatsby-remark-images": "^1.5.36",
     "gatsby-source-filesystem": "^1.5.11",
+    "gatsby-transformer-remark": "^1.7.26",
     "gatsby-transformer-sharp": "^1.6.16"
   },
   "keywords": [

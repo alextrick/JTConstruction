@@ -36,8 +36,9 @@ const TemplateWrapper = ({ children }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
-      
-    />
+    >
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    </Helmet>
     <Header />
     <div className="container">
       {children()}

@@ -4,13 +4,24 @@ import Img from 'gatsby-image';
 
 const IndexPage = ({ data }) =>  {
 
+  // if (window.netlifyIdentity) {
+  //   window.netlifyIdentity.on("init", user => {
+  //     if (!user) {
+  //       window.netlifyIdentity.on("login", () => {
+  //         document.location.href = "/admin/";
+  //       });
+  //     }
+  //   });
+  // }
+
+
   return (
     <div>
       <div className="section hero-content-area">
         <div className="hero">
           <Img className="hero-banner" sizes={data.kitchImage.sizes} />
           <div className="hero-info">
-            <h1>Blah blah blah</h1>
+            <h1>Blah blah Blah</h1>
             <h3>Lorem ipsum dolor sit amet, eu atomorum salutandi reformidans vix, ex magna malorum usu, legere platonem consequat eu qui. Libris gloriatur ius cu, no sit lorem repudiare cotidieque. Nam in virtute officiis platonem. In sed invenire deseruisse. Id vim quidam sapientem reprehendunt, eum ut ancillae molestie incorrupte.</h3>
             <Link to="#" className="btn">Contact Now</Link>
           </div>
