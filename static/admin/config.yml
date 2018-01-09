@@ -11,9 +11,9 @@ collections:
     folder: "src/pages/posts"
     create: true
     slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
-    fields:
-      - {label: "Path", name: "path", widget: "string"}
+    fields: 
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Path", name: "path", widget: "string"}
       - {label: "Upload", name: "file", widget: "file"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
