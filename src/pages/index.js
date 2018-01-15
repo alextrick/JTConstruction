@@ -115,7 +115,17 @@ const IndexPage = ({ data }) =>  {
                 Ornatus percipit similique mei ne, ex vis dicit consulatu.
             </p>
             <hr />
-            <form name="contact" netlify>
+            <form name="contact"
+                  method="post"
+                  action="/thanks/"
+                  data-netlify="true"
+                  data-netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
+              <p hidden>
+                <label>
+                  Don’t fill this out: <input name="bot-field" />
+                </label>
+              </p>
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email" required />
                 <textarea rows="10" placeholder="Please give some details about your project." required />
