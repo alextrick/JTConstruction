@@ -10,10 +10,6 @@ const IndexGallery = ({ data }) => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
     loop: true,
     slidesPerView: "auto",
     autoHeight: true,
@@ -65,30 +61,6 @@ const IndexGallery = ({ data }) => {
               const slide = createGalleryGroup(group, index);
               return slide;
           })}
-          {/* { groups.forEach(group => {
-            return (
-              <div className="grid">
-                { group.map((image, index) => {
-                    if (index === 0 || index === 3) {
-                        return  (
-                            <Link to={image.node.frontmatter.path} key={index}>
-                              <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                            </Link>
-                        )
-                    } else {
-                        return (
-                          <Link to={image.node.frontmatter.path} key={index}>
-                            <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                          </Link>
-                        )
-                    }
-                  })
-                }
-              </div>
-            )
-          })
-          } */}
-
         </Swiper>
       </div>
     );

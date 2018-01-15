@@ -54,9 +54,7 @@ export default function Template({
 
   return (
     <div className="section">
-      <Helmet title={`Joe Thomas Construction - ${frontmatter.title}`}>
-        {/* <script src="https://unpkg.com/react-id-swiper@1.5.7/lib/react-id-swiper.js"></script> */}
-      </Helmet>
+      <Helmet title={`Joe Thomas Construction - ${frontmatter.title}`} />
         <h1>{frontmatter.title}</h1>
         <Gallery
          data={frontmatter}
@@ -68,7 +66,7 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query GalleryPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
