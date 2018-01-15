@@ -120,16 +120,15 @@ const IndexPage = ({ data }) =>  {
                   // action="/thanks/"
                   data-netlify="true"
                   data-netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="contact" />
               <p hidden>
                 <label>
                   Don’t fill this out: <input name="bot-field" />
                 </label>
               </p>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" required />
-                <textarea rows="10" placeholder="Please give some details about your project." required />
-                <button type="submit" className="btn">Contact Now</button>
+                <input name="contact" type="text" placeholder="Name" />
+                <input name="contact" type="email" placeholder="Email" required />
+                <textarea name="contact" rows="10" placeholder="Please give some details about your project." required />
+                <button name="contact" type="submit" className="btn">Contact Now</button>
             </form>
         </div>
     </div>
