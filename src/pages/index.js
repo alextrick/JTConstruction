@@ -129,7 +129,7 @@ const IndexPage = ({ data }) =>  {
                 <input type="text" placeholder="Name" />
                 <input type="email" placeholder="Email" required />
                 <textarea rows="10" placeholder="Please give some details about your project." required />
-                <Link to="#" className="btn">Contact Now</Link>
+                <button type="submit" className="btn">Contact Now</button>
             </form>
         </div>
     </div>
