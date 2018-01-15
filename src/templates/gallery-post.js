@@ -25,6 +25,10 @@ export const Gallery = ({data}) => {
       }
     };
 
+  if (gal.length <= 1) {
+    params.loop = false;
+  }
+
   return (
     <Swiper {...params}>
       {gal

@@ -4,35 +4,6 @@ import Img from 'gatsby-image';
 
 import IndexGallery from "../components/index-gallery";
 
-
-// const Blah = ({ data }) => {
-
-//   return (
-//     <div className="section gallery">
-//       <h3 className="title">Gallery</h3>
-//       <hr />
-//       <div className="grid">
-//         { data.allMarkdownRemark.edges.map((image, index) => {
-//             if (index === 0 || index === 3) {
-//                 return  (
-//                     <Link to={image.node.frontmatter.path} key={index}>
-//                       <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-//                     </Link>
-//                 )
-//             } else {
-//                 return (
-//                   <Link to={image.node.frontmatter.path} key={index}>
-//                     <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-//                   </Link>
-//                 )
-//             }
-//           })
-//         }
-//       </div>
-//     </div>
-//   )
-// };
-
 const ContactForm = ({ data }) => {
 
   const handleClick = () => {

@@ -33,19 +33,19 @@ const IndexGallery = ({ data }) => {
 
 export default IndexGallery;
 
-export const query = graphql`
-    query IndexGalleryQuery {
-      allMarkdownRemark {
-        edges {
-          node {
-            frontmatter {
-              thumbnail
-              path
-              title
-            }
-          }
-        }
-      }
-    }
-`
-;
+// export const query = graphql`
+//     query IndexGalleryQuery {
+//       allMarkdownRemark {
+//         edges {
+//           node {
+//             frontmatter {
+//               thumbnail
+//               path
+//               title
+//             }
+//           }
+//         }
+//       }
+//     }
+// `
+// ;
