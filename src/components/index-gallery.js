@@ -32,33 +32,63 @@ const IndexGallery = ({ data }) => {
         }
         return groups;
     }
+    
     const groups = createGroupedArray(data.allMarkdownRemark.edges, 4);
 
-    console.log(groups);
-    
+    const createGalleryGroup = (group, i) => (
+      <div className="grid" key={i}>
+          { group.map((image, index) => {
+              if (index === 0 || index === 3) {
+                  return  (
+                      <Link to={image.node.frontmatter.path} key={index}>
+                        <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+                      </Link>
+                  )
+              } else {
+                  return (
+                    <Link to={image.node.frontmatter.path} key={index}>
+                      <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+                    </Link>
+                  )
+              }
+            })
+          }
+      </div>
+    )
+
     return (
       <div className="section gallery">
         <h3 className="title">Gallery</h3>
         <hr />
         <Swiper {...params}>
-          <div className="grid">
-            { data.allMarkdownRemark.edges.map((image, index) => {
-                if (index === 0 || index === 3) {
-                    return  (
-                        <Link to={image.node.frontmatter.path} key={index}>
-                          <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                        </Link>
-                    )
-                } else {
-                    return (
-                      <Link to={image.node.frontmatter.path} key={index}>
-                        <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                      </Link>
-                    )
+          {groups.map((group, index) => {
+              const slide = createGalleryGroup(group, index);
+              return slide;
+          })}
+          {/* { groups.forEach(group => {
+            return (
+              <div className="grid">
+                { group.map((image, index) => {
+                    if (index === 0 || index === 3) {
+                        return  (
+                            <Link to={image.node.frontmatter.path} key={index}>
+                              <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+                            </Link>
+                        )
+                    } else {
+                        return (
+                          <Link to={image.node.frontmatter.path} key={index}>
+                            <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+                          </Link>
+                        )
+                    }
+                  })
                 }
-              })
-            }
-          </div>
+              </div>
+            )
+          })
+          } */}
+
         </Swiper>
       </div>
     );
