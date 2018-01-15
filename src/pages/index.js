@@ -5,8 +5,6 @@ import Img from 'gatsby-image';
 
 const IndexGallery = ({ data }) => {
 
-
-  console.log(data.allMarkdownRemark.edges)
   return (
     <div className="section gallery">
       <h3 className="title">Gallery</h3>
@@ -34,7 +32,45 @@ const IndexGallery = ({ data }) => {
       </div>
     </div>
   )
+}
 
+const ContactForm = ({ data }) => {
+
+  const handleSubmit = () => {
+    const form = document.querySelector("form");
+    form.submit();
+    form.reset();
+    return false;
+  };
+
+  return (
+    <div className="section contact">
+      <h3 className="title">Contact</h3>
+      <p>
+          Illum dicam denique vix ut. Mei ullum appellantur ut, per id animal suscipit omittantur. 
+          Ornatus percipit similique mei ne, ex vis dicit consulatu.
+      </p>
+      <hr />
+      <form name="contact"
+            method="post"
+            action=""
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            // onSubmit={handleSubmit}
+            >
+        <input type="hidden" name="form-name" value="contact" />
+        <p hidden>
+          <label>
+            Don’t fill this out: <input name="bot-field" />
+          </label>
+        </p>
+          <input name="name" type="text" placeholder="Name" />
+          <input name="email" type="email" placeholder="Email" required />
+          <textarea name="message" rows="10" placeholder="Please give some details about your project." required />
+          <input type="button" value="Contact Now" className="btn" onClick={handleSubmit} />
+      </form>
+    </div>
+  );
 }
 
 const IndexPage = ({ data }) =>  {
@@ -108,30 +144,7 @@ const IndexPage = ({ data }) =>  {
 
         <IndexGallery data={data} />
 
-        <div className="section contact">
-            <h3 className="title">Contact</h3>
-            <p>
-                Illum dicam denique vix ut. Mei ullum appellantur ut, per id animal suscipit omittantur. 
-                Ornatus percipit similique mei ne, ex vis dicit consulatu.
-            </p>
-            <hr />
-            <form name="contact"
-                  method="post"
-                  // action="/thanks/"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="contact" />
-              <p hidden>
-                <label>
-                  Don’t fill this out: <input name="bot-field" />
-                </label>
-              </p>
-                <input name="name" type="text" placeholder="Name" />
-                <input name="email" type="email" placeholder="Email" required />
-                <textarea name="message" rows="10" placeholder="Please give some details about your project." required />
-                <button type="submit" className="btn">Contact Now</button>
-            </form>
-        </div>
+        <ContactForm />
     </div>
   )
 }
