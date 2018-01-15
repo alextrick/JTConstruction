@@ -126,10 +126,10 @@ const IndexPage = ({ data }) =>  {
                   Don’t fill this out: <input name="bot-field" />
                 </label>
               </p>
-                <input name="contact" type="text" placeholder="Name" />
-                <input name="contact" type="email" placeholder="Email" required />
-                <textarea name="contact" rows="10" placeholder="Please give some details about your project." required />
-                <button name="contact" type="submit" className="btn">Contact Now</button>
+                <input name="name" type="text" placeholder="Name" />
+                <input name="email" type="email" placeholder="Email" required />
+                <textarea name="message" rows="10" placeholder="Please give some details about your project." required />
+                <button type="submit" className="btn">Contact Now</button>
             </form>
         </div>
     </div>
