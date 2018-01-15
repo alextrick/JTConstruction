@@ -40,32 +40,6 @@ export const Gallery = ({data}) => {
   )
 }
 
-// export const SwiperInit = () => {
-//   const mySwiper = new Swiper ('.swiper-container', {
-//     // Optional parameters
-//     direction: 'horizontal',
-//     loop: true,
-
-//     // If we need pagination
-//     pagination: {
-//       el: '.swiper-pagination',
-//     },
-
-//     // Navigation arrows
-//     navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//     },
-
-//     // And if we need scrollbar
-//     scrollbar: {
-//       el: '.swiper-scrollbar',
-//     },
-//   });
-
-//   return <div></div>
-// }
-
 export default function Template({
   data
 }) {
@@ -76,7 +50,7 @@ export default function Template({
 
   return (
     <div className="section">
-      <Helmet title={`Your Blog Name - ${frontmatter.title}`}>
+      <Helmet title={`Joe Thomas Construction - ${frontmatter.title}`}>
         {/* <script src="https://unpkg.com/react-id-swiper@1.5.7/lib/react-id-swiper.js"></script> */}
       </Helmet>
         <h1>{frontmatter.title}</h1>

@@ -2,41 +2,40 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 
+import IndexGallery from "../components/index-gallery";
 
-const IndexGallery = ({ data }) => {
 
-  return (
-    <div className="section gallery">
-      <h3 className="title">Gallery</h3>
-      <hr />
-      <div className="grid">
-        { data.allMarkdownRemark.edges.map((image, index) => {
-            if (index % 2 === 0) {
-              if (index % 3 === 0) {
+// const Blah = ({ data }) => {
 
-              }
-              return  (
-                <Link to={image.node.frontmatter.path} key={index}>
-                  <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                </Link>
-              )
-            } else {
-              return (
-                <Link to={image.node.frontmatter.path} key={index}>
-                  <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                </Link>
-              )
-            }
-          })
-        }
-      </div>
-    </div>
-  )
-}
+//   return (
+//     <div className="section gallery">
+//       <h3 className="title">Gallery</h3>
+//       <hr />
+//       <div className="grid">
+//         { data.allMarkdownRemark.edges.map((image, index) => {
+//             if (index === 0 || index === 3) {
+//                 return  (
+//                     <Link to={image.node.frontmatter.path} key={index}>
+//                       <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+//                     </Link>
+//                 )
+//             } else {
+//                 return (
+//                   <Link to={image.node.frontmatter.path} key={index}>
+//                     <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+//                   </Link>
+//                 )
+//             }
+//           })
+//         }
+//       </div>
+//     </div>
+//   )
+// };
 
 const ContactForm = ({ data }) => {
 
-  const handleSubmit = () => {
+  const handleClick = () => {
     const form = document.querySelector("form");
     form.submit();
     form.reset();
@@ -53,10 +52,9 @@ const ContactForm = ({ data }) => {
       <hr />
       <form name="contact"
             method="post"
-            action=""
+            action="/thanks/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            // onSubmit={handleSubmit}
             >
         <input type="hidden" name="form-name" value="contact" />
         <p hidden>
@@ -67,7 +65,7 @@ const ContactForm = ({ data }) => {
           <input name="name" type="text" placeholder="Name" />
           <input name="email" type="email" placeholder="Email" required />
           <textarea name="message" rows="10" placeholder="Please give some details about your project." required />
-          <input type="button" value="Contact Now" className="btn" onClick={handleSubmit} />
+          <button type="submit" value="Contact Now" className="btn">Contact Now!</button>
       </form>
     </div>
   );
@@ -142,7 +140,7 @@ const IndexPage = ({ data }) =>  {
             </div>
         </div> */}
 
-        <IndexGallery data={data} />
+        <IndexGallery data={data}/>
 
         <ContactForm />
     </div>
