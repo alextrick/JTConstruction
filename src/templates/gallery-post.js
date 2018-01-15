@@ -3,27 +3,6 @@ import Helmet from 'react-helmet';
 
 import Swiper from 'react-id-swiper';
 
-class Navigation extends Component {
-  render() {
-    const params = {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      }
-    }
-
-    return (
-      <Swiper {...params}>
-        <div>Slide 1</div>
-        <div>Slide 2</div>
-        <div>Slide 3</div>
-        <div>Slide 4</div>
-        <div>Slide 5</div>
-      </Swiper>
-    )
-  }
-}
-
 export const Gallery = ({data}) => {
   const frontmatter = data;
   const gal = frontmatter.galleryImages;
@@ -32,8 +11,19 @@ export const Gallery = ({data}) => {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      loop: true,
+      slidesPerView: "auto",
+      autoHeight: true,
+      a11y: {
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide',
       }
-    }
+    };
 
   return (
     <Swiper {...params}>
@@ -85,17 +75,15 @@ export default function Template({
   
 
   return (
-    <div className="section gallery">
+    <div className="section">
       <Helmet title={`Your Blog Name - ${frontmatter.title}`}>
         {/* <script src="https://unpkg.com/react-id-swiper@1.5.7/lib/react-id-swiper.js"></script> */}
       </Helmet>
-      <div className="blog-post">
         <h1>{frontmatter.title}</h1>
         <Gallery
          data={frontmatter}
         />
         <p>{frontmatter.description}</p>
-      </div>
       {/* <SwiperInit /> */}
     </div>
   );

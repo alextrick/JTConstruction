@@ -2,18 +2,42 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 
+
+const IndexGallery = ({ data }) => {
+
+
+  console.log(data.allMarkdownRemark.edges)
+  return (
+    <div className="section gallery">
+      <h3 className="title">Gallery</h3>
+      <hr />
+      <div className="grid">
+        { data.allMarkdownRemark.edges.map((image, index) => {
+            if (index % 2 === 0) {
+              if (index % 3 === 0) {
+
+              }
+              return  (
+                <Link to={image.node.frontmatter.path} key={index}>
+                  <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+                </Link>
+              )
+            } else {
+              return (
+                <Link to={image.node.frontmatter.path} key={index}>
+                  <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+                </Link>
+              )
+            }
+          })
+        }
+      </div>
+    </div>
+  )
+
+}
+
 const IndexPage = ({ data }) =>  {
-
-  // if (window.netlifyIdentity) {
-  //   window.netlifyIdentity.on("init", user => {
-  //     if (!user) {
-  //       window.netlifyIdentity.on("login", () => {
-  //         document.location.href = "/admin/";
-  //       });
-  //     }
-  //   });
-  // }
-
 
   return (
     <div>
@@ -71,7 +95,7 @@ const IndexPage = ({ data }) =>  {
         </ul>
       </div>
 
-      <div className="section gallery">
+      {/* <div className="section gallery">
             <h3 className="title">Gallery</h3>
             <hr />
             <div className="grid">
@@ -80,7 +104,9 @@ const IndexPage = ({ data }) =>  {
                 <Img className="img large" sizes={data.galThree.sizes}/>
                 <Img className="img small" sizes={data.galFour.sizes}/>
             </div>
-        </div>
+        </div> */}
+
+        <IndexGallery data={data} />
 
         <div className="section contact">
             <h3 className="title">Contact</h3>
@@ -89,8 +115,10 @@ const IndexPage = ({ data }) =>  {
                 Ornatus percipit similique mei ne, ex vis dicit consulatu.
             </p>
             <hr />
-            <form>
-                <input type="email" placeholder="Email" />
+            <form name="contact" netlify>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" required />
+                <textarea rows="10" placeholder="Please give some details about your project." required />
                 <Link to="#" className="btn">Contact Now</Link>
             </form>
         </div>
@@ -104,7 +132,18 @@ export default IndexPage
 
 
 export const query = graphql`
-  query BlurUpQuery {
+  query PageQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            thumbnail
+            path
+            title
+          }
+        }
+      }
+    }
     kitchImage: imageSharp(id: { regex: "/kitchen/" }) {
       sizes(maxWidth: 600) {
         ...GatsbyImageSharpSizes
