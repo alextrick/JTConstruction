@@ -124,30 +124,5 @@ export const query = graphql`
         }
       }
     }
-    kitchImage: imageSharp(id: { regex: "/kitchen/" }) {
-      sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    galOne: imageSharp(id: { regex: "/one/" }) {
-      sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    galTwo: imageSharp(id: { regex: "/two/" }) {
-      sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    galThree: imageSharp(id: { regex: "/three/" }) {
-      sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-    galFour: imageSharp(id: { regex: "/four/" }) {
-      sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes
-      }
-    }
   }
 `;
