@@ -97,6 +97,18 @@ const IndexPage = ({ data }) =>  {
                     Option civibus no nec, sea an luptatum corrumpit.
                 </p>
             </li>
+            <li>
+                <h4>Blah Six</h4>
+                <p>Vim in alia consetetur honestatis, eos nisl falli necessitatibus ad. 
+                    Option civibus no nec, sea an luptatum corrumpit.
+                </p>
+            </li>
+            <li>
+                <h4>Blah Six</h4>
+                <p>Vim in alia consetetur honestatis, eos nisl falli necessitatibus ad. 
+                    Option civibus no nec, sea an luptatum corrumpit.
+                </p>
+            </li>
         </ul>
       </div>
         <IndexGallery data={data}/>

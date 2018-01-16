@@ -15,6 +15,8 @@ const IndexGallery = ({ data }) => {
     loop: true,
     preloadImages: false,
     lazy: true,
+    loadPrevNext: true,
+    loadPrevNextAmount: 5,
     autoHeight: true,
     a11y: {
       prevSlideMessage: 'Previous slide',
@@ -40,7 +42,8 @@ const IndexGallery = ({ data }) => {
         { data.allMarkdownRemark.edges.map((image, index) => {
             return (
               <Link to={image.node.frontmatter.path} key={index}>
-                <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+                <img className="img swiper-lazy" data-src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+                <div class="swiper-lazy-preloader"></div>
               </Link>
             )
           })
@@ -51,20 +54,3 @@ const IndexGallery = ({ data }) => {
 }
 
 export default IndexGallery;
-
-// export const query = graphql`
-//     query IndexGalleryQuery {
-//       allMarkdownRemark {
-//         edges {
-//           node {
-//             frontmatter {
-//               thumbnail
-//               path
-//               title
-//             }
-//           }
-//         }
-//       }
-//     }
-// `
-// ;

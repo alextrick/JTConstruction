@@ -39,6 +39,7 @@ const TemplateWrapper = ({ children }) => (
       ]}
     >
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Merriweather|Quicksand:500,700" rel="stylesheet" />
     </Helmet>
     <Header />
     <div className="container">
