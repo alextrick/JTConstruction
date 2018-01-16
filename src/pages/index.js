@@ -99,18 +99,6 @@ const IndexPage = ({ data }) =>  {
             </li>
         </ul>
       </div>
-
-      {/* <div className="section gallery">
-            <h3 className="title">Gallery</h3>
-            <hr />
-            <div className="grid">
-                <Img className="img small" sizes={data.galOne.sizes}/>
-                <Img className="img large" sizes={data.galTwo.sizes}/>
-                <Img className="img large" sizes={data.galThree.sizes}/>
-                <Img className="img small" sizes={data.galFour.sizes}/>
-            </div>
-        </div> */}
-
         <IndexGallery data={data}/>
 
         <ContactForm />

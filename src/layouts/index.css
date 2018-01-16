@@ -55,6 +55,7 @@ hr {
     align-items: center;
     max-width: 100vw;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .section h3.title {
@@ -171,24 +172,11 @@ hr {
 
 /* Gallery Styles */
 
-.gallery .grid .img {
+.img {
     height: 350px;
     margin: 0 1rem 1rem 0;
     object-fit: cover;
-}
-
-.gallery .grid {
-    flex-direction: row;
-}
-
-.gallery .grid .img.small {
-    flex-basis: 25%;
     width: 25vw;
-}
-
-.gallery .grid .img.large {
-    flex-basis: 65%;
-    width: 40vw;
 }
 
 .swiper-container {
@@ -241,7 +229,7 @@ hr {
     flex-direction: column;
     // align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     width: 60%;
 }
 
@@ -256,10 +244,7 @@ hr {
     color: #555;
     flex: 1;
     margin-bottom: 0.5rem;
-}
-
-.contact form textarea {
-    border: 1px solid rgb(204, 204, 204);
+    border: 1px solid rgb(230, 230, 230);
     width: 100%;
 }
 
@@ -295,10 +280,13 @@ hr {
 
 
 @media screen and (max-width: 1200px) {
-    .gallery .grid .img.small,
-    .gallery .grid .img.large {
+    .img {
         flex-basis: 50%;
-        width: 40vw;
+        width: 35vw;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
     footer {
         flex-direction: column;
@@ -330,8 +318,8 @@ hr {
     }
     .swiper-button-next, .swiper-button-prev {
         transform: scale(1, 1);
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
     .contact form {
         width: 90%;
@@ -367,10 +355,10 @@ hr {
     .hero a.btn {
         padding: 15px 40px;
     }
-    .gallery .grid .img.small,
-    .gallery .grid .img.large {
+    .img {
         width: 80vw;
         flex-basis: 100%;
+        margin-right: 0;
     }
     .services .grid li {
         flex-basis: 100%;

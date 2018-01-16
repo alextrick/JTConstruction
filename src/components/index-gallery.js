@@ -4,92 +4,50 @@ import Link from 'gatsby-link';
 import Swiper from 'react-id-swiper';
 
 const IndexGallery = ({ data }) => {
-  
+
   const params = {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
+    slidesPerView: 3,
+    spaceBetween: 20,
     loop: true,
-    slidesPerView: "auto",
+    preloadImages: false,
+    lazy: true,
     autoHeight: true,
     a11y: {
       prevSlideMessage: 'Previous slide',
       nextSlideMessage: 'Next slide',
+    },
+    direction: "horizontal",
+    breakpoints: {
+      800: {
+        slidesPerView: 1,
+      },
+      1000: {
+        slidesPerView: 2,
+      }
     }
   };
 
-  if (data.allMarkdownRemark.edges.length > 4) {
-
-    const createGroupedArray = (arr, chunkSize) => {
-        let groups = [], i;
-        for (i = 0; i < arr.length; i += chunkSize) {
-            groups.push(arr.slice(i, i + chunkSize));
+  return (
+    <div className="section gallery">
+      <h3 className="title">Gallery</h3>
+      <p>Use the arrows to browse and select an image to view the gallery.</p>
+      <hr />
+      <Swiper {...params}>
+        { data.allMarkdownRemark.edges.map((image, index) => {
+            return (
+              <Link to={image.node.frontmatter.path} key={index}>
+                <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
+              </Link>
+            )
+          })
         }
-        return groups;
-    }
-    
-    const groups = createGroupedArray(data.allMarkdownRemark.edges, 4);
-
-    const createGalleryGroup = (group, i) => (
-      <div className="grid" key={i}>
-          { group.map((image, index) => {
-              if (index === 0 || index === 3) {
-                  return  (
-                      <Link to={image.node.frontmatter.path} key={index}>
-                        <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                      </Link>
-                  )
-              } else {
-                  return (
-                    <Link to={image.node.frontmatter.path} key={index}>
-                      <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                    </Link>
-                  )
-              }
-            })
-          }
-      </div>
-    )
-
-    return (
-      <div className="section gallery">
-        <h3 className="title">Gallery</h3>
-        <hr />
-        <Swiper {...params}>
-          {groups.map((group, index) => {
-              const slide = createGalleryGroup(group, index);
-              return slide;
-          })}
-        </Swiper>
-      </div>
-    );
-  } else {
-    return (
-      <div className="section gallery">
-        <h3 className="title">Gallery</h3>
-        <hr />
-        <div className="grid">
-          { data.allMarkdownRemark.edges.map((image, index) => {
-              if (index === 0 || index === 3) {
-                  return  (
-                      <Link to={image.node.frontmatter.path} key={index}>
-                        <img className="img small" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                      </Link>
-                  )
-              } else {
-                  return (
-                    <Link to={image.node.frontmatter.path} key={index}>
-                      <img className="img large" src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                    </Link>
-                  )
-              }
-            })
-          }
-        </div>
-      </div>
-    );
-  }  
+      </Swiper>
+    </div>
+  );
 }
 
 export default IndexGallery;

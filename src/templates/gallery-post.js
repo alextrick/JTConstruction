@@ -49,9 +49,6 @@ export default function Template({
 }) {
   const { frontmatter } = data.markdownRemark;
   const gal = frontmatter.galleryImages;
-
-  
-
   return (
     <div className="section">
       <Helmet title={`Joe Thomas Construction - ${frontmatter.title}`} />
