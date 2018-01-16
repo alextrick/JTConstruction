@@ -57,7 +57,6 @@ export default function Template({
          data={frontmatter}
         />
         <p>{frontmatter.description}</p>
-      {/* <SwiperInit /> */}
     </div>
   );
 }
