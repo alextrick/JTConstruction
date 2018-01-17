@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 
+
+import Services from "../components/services";
 import IndexGallery from "../components/index-gallery";
 import ContactForm from "../components/contact-form";
 
@@ -20,64 +22,11 @@ const IndexPage = ({ data }) =>  {
           </div>
         </div>
       </div>
+      <Services />
+      
+      <IndexGallery data={data}/>
 
-      <div className="section services">
-        <h3 className="title">Services</h3>
-        <p>Id timeam copiosae mandamus vel, mea appetere instructior no. Quem case delenit ei pro, id admodum mandamus usu.</p>
-        <hr />
-        <ul className="grid">
-            <li>
-                <h4>Blah 1</h4>
-                <p>Illum dicam denique vix ut. Mei ullum appellantur ut, per id animal suscipit omittantur. 
-                    Ornatus percipit similique mei ne, ex vis dicit consulatu.</p>
-            </li>
-            <li>
-                <h4>Blah 2</h4>
-                <p>Nec ne discere epicurei inimicus, usu sensibus salutandi ad, 
-                    ne ullum debet partem pro.
-                </p>
-            </li>
-            <li>
-                <h4>Blah 3</h4>
-                <p>Sea habemus adolescens vituperata ne, affert tractatos te vim, his viderer numquam vituperatoribus ei. 
-                    No doctus impedit deleniti his, doming blandit ei usu.
-                </p>
-            </li>
-            <li>
-                <h4>Blah 4</h4>
-                <p>Vis id graeco partiendo contentiones, cum suas labitur temporibus te, 
-                    et est libris dignissim.
-                </p>
-            </li>
-            <li>
-                <h4>Blah 5</h4>
-                <p>His munere aliquam insolens at, animal accumsan democritum ad nam. 
-                    Est cu aeterno labitur. Iusto omnesque patrioque nam an.
-                </p>
-            </li>
-            <li>
-                <h4>Blah Six</h4>
-                <p>Vim in alia consetetur honestatis, eos nisl falli necessitatibus ad. 
-                    Option civibus no nec, sea an luptatum corrumpit.
-                </p>
-            </li>
-            <li>
-                <h4>Blah Six</h4>
-                <p>Vim in alia consetetur honestatis, eos nisl falli necessitatibus ad. 
-                    Option civibus no nec, sea an luptatum corrumpit.
-                </p>
-            </li>
-            <li>
-                <h4>Blah Six</h4>
-                <p>Vim in alia consetetur honestatis, eos nisl falli necessitatibus ad. 
-                    Option civibus no nec, sea an luptatum corrumpit.
-                </p>
-            </li>
-        </ul>
-      </div>
-        <IndexGallery data={data}/>
-
-        <ContactForm />
+      <ContactForm />
     </div>
   )
 }

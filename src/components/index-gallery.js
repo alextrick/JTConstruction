@@ -17,7 +17,6 @@ const IndexGallery = ({ data }) => {
     lazy: true,
     loadPrevNext: true,
     loadPrevNextAmount: 5,
-    // autoHeight: true,
     a11y: {
       prevSlideMessage: 'Previous slide',
       nextSlideMessage: 'Next slide',
@@ -43,11 +42,12 @@ const IndexGallery = ({ data }) => {
             return (
               <Link to={image.node.frontmatter.path} key={index}>
                 <div className="gallery-image">
+                  <div className="gallery-preload-cover"></div>
                   <img className="img swiper-lazy" data-src={image.node.frontmatter.thumbnail} alt={`A link to ${image.node.frontmatter.title} project`} />
                   <div className="gallery-overlay">
                     <div className="gallery-overlay-text">{image.node.frontmatter.title}</div>
                   </div>
-                  <div class="swiper-lazy-preloader"></div>
+                  <div className="swiper-lazy-preloader"></div>
                 </div>
               </Link>
             )

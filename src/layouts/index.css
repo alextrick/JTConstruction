@@ -95,10 +95,9 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items:center;
-    padding: 35px 100px 0;
+    padding: 2rem;
     animation: 1s fadein 0.4s forwards;
     opacity: 0;
-    margin-bottom: 2rem;
 }
 
 @keyframes fadein {
@@ -113,11 +112,11 @@ hr {
 
 .header nav {
     display: flex;
-    margin-right: -15px;
+    margin-right: -1rem;
 }
 
 .header nav li {
-    margin: 0 15px;
+    margin: 0 1rem;
 }
 
 /* Hero Styles */
@@ -178,14 +177,23 @@ hr {
 /* Gallery Styles */
 
 .img {
-    height: 250px;
-    max-height: 20vw;
+    height: auto;
     margin: 0 1rem 1rem 0;
     object-fit: cover;
-    width: auto;
+    width: 100%;
     transition: all 0.3s;
 }
 
+.gallery-preload-cover {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
 .gallery-overlay {
     position: absolute;
     top: 0;
@@ -217,8 +225,8 @@ hr {
 
 .swiper-container {
     width: 90vw;
-    height: auto;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .main-gallery .swiper-container {
@@ -238,10 +246,14 @@ hr {
     margin-right: 1rem;
 }
 
+.swiper-lazy-preloader {
+    margin-top: 5rem;
+}
+
 /* Services */
 
 .services .grid li {
-    padding: 50px;
+    padding: 1rem;
     flex-basis: 25%;
     text-align: center;
 }
@@ -251,8 +263,16 @@ hr {
 }
 
 .services .grid li h4 {
-    font-size: 30px;
-    margin: 25px 0;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.service-container {
+    border-radius: 50%;
+    background-color: white;
+    width: 8rem;
+    height: 8rem;
+    margin: 1rem auto;
 }
 
 /* Contact */
@@ -346,6 +366,9 @@ hr {
     .hero-banner{ 
         width: 100vw;
     }
+    .hero-info {
+        padding: 1rem;
+    }
     .swiper-container {
         width: 100vw;
     }
@@ -359,11 +382,11 @@ hr {
     }
     .contact form input, .contact form textarea {
         flex-basis: 100%;
-        margin: 0 0 20px 0;
+        margin: 0 0 1.25rem 0;
     }
     .services .grid li {
         flex-basis: 50%;
-        padding: 20px;
+        padding: 1rem;
     }
 }
 
@@ -374,16 +397,16 @@ hr {
         flex-direction: column;
     }
     .header h2 {
-        margin-bottom: 15px;
+        margin-bottom: 1rem auto;
     }
     .hero {
         min-height: 600px;
     }
     .hero h1 {
-        font-size: 48px;
+        font-size: 2rem;
     }
     .hero h3 {
-        font-size: 24px;
+        font-size: 1rem;
     }
     .hero a.btn {
         padding: 15px 40px;
@@ -395,13 +418,9 @@ hr {
     }
     .services .grid li {
         flex-basis: 100%;
-        padding: 20px;
     }
-    .testimonials .quote {
-        font-size: 18px;
-        margin: 15px 0;
-    }
-    .testimonials .author {
-        font-size: 14px;
+
+    .services .grid li h4 {
+        font-size: 1.2rem;
     }
 }
