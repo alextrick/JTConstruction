@@ -6,14 +6,34 @@ import Services from "../components/services";
 import IndexGallery from "../components/index-gallery";
 import ContactForm from "../components/contact-form";
 
+import Script from "react-load-script";
+
 
 import { configureAnchors } from 'react-scrollable-anchor'
 
 configureAnchors({scrollDuration: 600});
+
 const IndexPage = ({ data }) =>  {
 
+  function handleScriptLoad() {
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', (user) => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+    window.netlifyIdentity.init();
+  }
+    
   return (
     <div>
+      <Script
+        url="https://identity.netlify.com/v1/netlify-identity-widget.js"
+        onLoad={() => handleScriptLoad()}
+      />
       <div className="section hero-content-area">
         <div className="hero">
           <Img className="hero-banner" sizes={data.kitchImage.sizes} />
