@@ -33,7 +33,7 @@ const ContactForm = ({ data }) => {
           </p>
             <input name="name" type="text" placeholder="Name" />
             <input name="email" type="email" placeholder="Email" required />
-            <textarea name="message" rows="10" placeholder="Please give some details about your project." required />
+            <textarea name="message" rows="12" placeholder="Please give some details about your project." required />
             <button type="submit" value="Contact Now" className="btn">Contact Now</button>
         </form>
       </div>

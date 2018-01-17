@@ -35,7 +35,7 @@ const IndexGallery = ({ data }) => {
 
   return (
     <div className="section gallery">
-      <ScrollableAnchor id={"gallery"}><h2 className="title">Gallery</h2></ScrollableAnchor>
+      <ScrollableAnchor id={"gallery"}><h3 className="title">Gallery</h3></ScrollableAnchor>
       <p>Use the arrows to browse and select an image to view the gallery.</p>
       <hr />
       <Swiper {...params}>
