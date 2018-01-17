@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 
-
 import Services from "../components/services";
 import IndexGallery from "../components/index-gallery";
 import ContactForm from "../components/contact-form";
@@ -22,10 +21,14 @@ const IndexPage = ({ data }) =>  {
           </div>
         </div>
       </div>
+
+      {/* <a name="services" /> */}
       <Services />
+  
       
       <IndexGallery data={data}/>
 
+      
       <ContactForm />
     </div>
   )

@@ -1,5 +1,6 @@
 import React from 'react';
-import Link from 'gatsby-link';
+
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 const ContactForm = ({ data }) => {
 
@@ -12,7 +13,7 @@ const ContactForm = ({ data }) => {
   
     return (
       <div className="section contact">
-        <h3 className="title">Contact</h3>
+        <ScrollableAnchor id={"contact"}><h3 className="title">Contact</h3></ScrollableAnchor>
         <p>
             Illum dicam denique vix ut. Mei ullum appellantur ut, per id animal suscipit omittantur. 
             Ornatus percipit similique mei ne, ex vis dicit consulatu.

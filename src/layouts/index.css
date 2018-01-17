@@ -337,6 +337,9 @@ hr {
         flex-basis: 50%;
         width: 35vw;
     }
+    .main-gallery .swiper-container {
+        width: 80vw;
+    }
     .swiper-button-next, .swiper-button-prev {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
@@ -379,6 +382,7 @@ hr {
     }
     .contact form {
         width: 90%;
+        height: auto;
     }
     .contact form input, .contact form textarea {
         flex-basis: 100%;
@@ -397,7 +401,8 @@ hr {
         flex-direction: column;
     }
     .header h2 {
-        margin-bottom: 1rem auto;
+        margin: 1rem;
+        font-size: 1.2rem;
     }
     .hero {
         min-height: 600px;
@@ -415,6 +420,9 @@ hr {
         width: 80vw;
         flex-basis: 100%;
         margin-right: 0;
+    }
+    .main-gallery .swiper-container {
+        width: 100vw;
     }
     .services .grid li {
         flex-basis: 100%;

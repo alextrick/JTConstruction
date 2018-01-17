@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import Swiper from 'react-id-swiper';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 const IndexGallery = ({ data }) => {
 
@@ -34,7 +35,7 @@ const IndexGallery = ({ data }) => {
 
   return (
     <div className="section gallery">
-      <h2 className="title">Gallery</h2>
+      <ScrollableAnchor id={"gallery"}><h2 className="title">Gallery</h2></ScrollableAnchor>
       <p>Use the arrows to browse and select an image to view the gallery.</p>
       <hr />
       <Swiper {...params}>

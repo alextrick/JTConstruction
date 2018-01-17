@@ -11,9 +11,9 @@ const Header = () => (
   <div className="header">
     <h2><Link to="/" >Joseph Thomas Construction</Link></h2>
     <nav>
-        <li><Link to="#" >Gallery</Link></li>
-        <li><Link to="#" >About</Link></li>
-        <li><Link to="#" >Contact</Link></li>
+        <li><a href="/#gallery" >Gallery</a></li>
+        <li><a href="/#services" >Services</a></li>
+        <li><a href="/#contact" >Contact</a></li>
     </nav>
   </div>
 )
