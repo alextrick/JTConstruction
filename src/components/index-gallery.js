@@ -17,7 +17,7 @@ const IndexGallery = ({ data }) => {
     lazy: true,
     loadPrevNext: true,
     loadPrevNextAmount: 5,
-    autoHeight: true,
+    // autoHeight: true,
     a11y: {
       prevSlideMessage: 'Previous slide',
       nextSlideMessage: 'Next slide',
@@ -35,15 +35,20 @@ const IndexGallery = ({ data }) => {
 
   return (
     <div className="section gallery">
-      <h3 className="title">Gallery</h3>
+      <h2 className="title">Gallery</h2>
       <p>Use the arrows to browse and select an image to view the gallery.</p>
       <hr />
       <Swiper {...params}>
         { data.allMarkdownRemark.edges.map((image, index) => {
             return (
               <Link to={image.node.frontmatter.path} key={index}>
-                <img className="img swiper-lazy" data-src={image.node.frontmatter.thumbnail} alt={`A link to ${image.title} project`} />
-                <div class="swiper-lazy-preloader"></div>
+                <div className="gallery-image">
+                  <img className="img swiper-lazy" data-src={image.node.frontmatter.thumbnail} alt={`A link to ${image.node.frontmatter.title} project`} />
+                  <div className="gallery-overlay">
+                    <div className="gallery-overlay-text">{image.node.frontmatter.title}</div>
+                  </div>
+                  <div class="swiper-lazy-preloader"></div>
+                </div>
               </Link>
             )
           })

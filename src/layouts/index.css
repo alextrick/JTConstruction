@@ -36,6 +36,8 @@ nav a:hover {
     background-color: #3f51b5;
     opacity: 1;
     cursor: pointer;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
 }
 
 ul {
@@ -47,7 +49,7 @@ hr {
     height: 3px;
     background-color: #3f51b5;
     border: 0;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
 }
 
 .section {
@@ -62,7 +64,7 @@ hr {
 .section h3.title {
     text-transform: capitalize;
     font: bold 32px "Quicksand", sans-serif;
-    margin-bottom: 30px;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -177,19 +179,50 @@ hr {
 
 .img {
     height: 250px;
-    max-height: 250px;
+    max-height: 20vw;
     margin: 0 1rem 1rem 0;
     object-fit: cover;
     width: auto;
     transition: all 0.3s;
 }
 
-.img:hover {
-    filter: grayscale(100%);
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.gallery-overlay-text {
+    color: white;
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gallery-image:hover .img {
+    filter: grayscale(100%) brightness(50%);
+}
+
+.gallery-image:hover .gallery-overlay {
+    opacity: 1;
 }
 
 .swiper-container {
     width: 90vw;
+    height: auto;
+    margin: 0 auto;
+}
+
+.main-gallery .swiper-container {
+    width: 60vw;
     height: auto;
     margin: 0 auto;
 }

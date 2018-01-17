@@ -50,13 +50,18 @@ export default function Template({
   const { frontmatter } = data.markdownRemark;
   const gal = frontmatter.galleryImages;
   return (
-    <div className="section">
+    <div>
       <Helmet title={`Joe Thomas Construction - ${frontmatter.title}`} />
-        <h1>{frontmatter.title}</h1>
-        <Gallery
-         data={frontmatter}
-        />
+      <div className="section main-gallery">
+        <h3 className="title">{frontmatter.title}</h3>
+        <hr />
+        <Gallery data={frontmatter} />
+      </div>
+      <div className="section">
+        <h3 className="title">Project details</h3>
+        <hr />
         <p>{frontmatter.description}</p>
+      </div>
     </div>
   );
 }
