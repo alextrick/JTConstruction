@@ -7,6 +7,9 @@ import IndexGallery from "../components/index-gallery";
 import ContactForm from "../components/contact-form";
 
 
+import { configureAnchors } from 'react-scrollable-anchor'
+
+configureAnchors({scrollDuration: 600});
 const IndexPage = ({ data }) =>  {
 
   return (
