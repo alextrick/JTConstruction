@@ -1,6 +1,8 @@
 import React from 'react';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
+import { Fade } from 'react-reveal';
+
 
 const Services = () => {
     return (
@@ -9,45 +11,62 @@ const Services = () => {
             <p>Id timeam copiosae mandamus vel, mea appetere instructior no. Quem case delenit ei pro, id admodum mandamus usu.</p>
             <hr />
             <ul className="grid">
+                
                 <li>
-                    <div className="service-container">
-                    </div>
-                    <h4>General Building</h4>
+                    <Fade left delay={0}>
+                        <div className="service-container">
+                        </div>
+                        <h4>General Building</h4>
+                    </Fade>
                 </li>
                 <li>
-                    <div className="service-container">
-                    </div>
-                    <h4>Renovations</h4>
+                    <Fade bottom delay={0}>
+                        <div className="service-container">
+                        </div>
+                        <h4>Renovations</h4>
+                    </Fade>
                 </li>
                 <li>
-                    <div className="service-container">
-                    </div>
-                    <h4>Extensions</h4>
+                    <Fade bottom delay={0}>
+                        <div className="service-container">
+                        </div>
+                        <h4>Extensions</h4>
+                    </Fade>
                 </li>
                 <li>
-                    <div className="service-container">
-                    </div>
-                    <h4>Kitchens</h4>
+                    <Fade right delay={0}>
+                        <div className="service-container">
+                        </div>
+                        <h4>Kitchens</h4>
+                    </Fade>
                 </li>
                 <li>
-                    <div className="service-container">
-                    </div>
-                    <h4>Bathrooms</h4>
+                    <Fade left>
+                        <div className="service-container">
+                        </div>
+                        <h4>Bathrooms</h4>
+                    </Fade>
                 </li>
                 <li>
-                    <div className="service-container">
-                    </div>
-                    <h4>Carpentry</h4>
+                    <Fade bottom>
+                        <div className="service-container">
+                        </div>
+                        <h4>Carpentry</h4>
+                    </Fade>
                 </li>
                 <li>
-                    <div className="service-container">
-                    </div>
-                    <h4>Utility Rooms</h4>
+                    <Fade bottom>
+                        <div className="service-container">
+                        </div>
+                        <h4>Utility Rooms</h4>
+                    </Fade>
                 </li>
                 <li>
+                <Fade right>
                     <div className="service-container">
                     </div>
                     <h4>Tiling</h4>
+                </Fade>
                 </li>
             </ul>
         </div>

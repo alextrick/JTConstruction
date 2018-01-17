@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 
+import Hero from "../components/hero";
 import Services from "../components/services";
 import IndexGallery from "../components/index-gallery";
 import ContactForm from "../components/contact-form";
@@ -34,24 +35,13 @@ const IndexPage = ({ data }) =>  {
         url="https://identity.netlify.com/v1/netlify-identity-widget.js"
         onLoad={() => handleScriptLoad()}
       />
-      <div className="section hero-content-area">
-        <div className="hero">
-          <Img className="hero-banner" sizes={data.kitchImage.sizes} />
-          <div className="hero-info">
-            <h1>Blah blah Blah</h1>
-            <h3>Lorem ipsum dolor sit amet, eu atomorum salutandi reformidans vix, ex magna malorum usu, legere platonem consequat eu qui. Libris gloriatur ius cu, no sit lorem repudiare cotidieque. Nam in virtute officiis platonem. In sed invenire deseruisse. Id vim quidam sapientem reprehendunt, eum ut ancillae molestie incorrupte.</h3>
-            <Link to="#" className="btn">Contact Now</Link>
-          </div>
-        </div>
-      </div>
+      
+      <Hero banner={data.heroBanner.sizes}/>
 
-      {/* <a name="services" /> */}
       <Services />
   
-      
       <IndexGallery data={data}/>
 
-      
       <ContactForm />
     </div>
   )
@@ -75,7 +65,7 @@ export const query = graphql`
         }
       }
     }
-    kitchImage: imageSharp(id: { regex: "/kitchen/" }) {
+    heroBanner: imageSharp(id: { regex: "/kitchen/" }) {
       sizes(maxWidth: 600) {
         ...GatsbyImageSharpSizes
       }

@@ -10,6 +10,11 @@ import './swiper.min.css';
 const Header = () => (
   <div className="header">
     <h2><Link to="/" >Joseph Thomas Construction</Link></h2>
+    <div className="header-burger-menu">
+        <div className="header-burger-top"></div>
+        <div className="header-burger-middle"></div>
+        <div className="header-burger-bottom"></div>
+    </div>
     <nav>
         <li><a href="/#gallery" >Gallery</a></li>
         <li><a href="/#services" >Services</a></li>

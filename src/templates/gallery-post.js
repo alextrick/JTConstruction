@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import Swiper from 'react-id-swiper';
+import { Fade } from 'react-reveal';
 
 export const Gallery = ({data}) => {
   const frontmatter = data;
@@ -55,12 +56,16 @@ export default function Template({
       <div className="section main-gallery">
         <h3 className="title">{frontmatter.title}</h3>
         <hr />
-        <Gallery data={frontmatter} />
+        <Fade bottom>
+          <Gallery data={frontmatter} />
+        </Fade>
       </div>
       <div className="section">
         <h3 className="title">Project details</h3>
         <hr />
-        <p>{frontmatter.description}</p>
+        <Fade bottom>
+          <p>{frontmatter.description}</p>
+        </Fade>
       </div>
     </div>
   );
