@@ -9,21 +9,16 @@ export const Gallery = ({data}) => {
   const gal = frontmatter.galleryImages;
 
   const params = {
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
       },
       loop: true,
       slidesPerView: "auto",
       autoHeight: true,
-      a11y: {
-        prevSlideMessage: 'Previous slide',
-        nextSlideMessage: 'Next slide',
-      }
+      autoplay: {
+        delay: 6000,
+      },
     };
 
   if (gal.length <= 1) {
@@ -37,7 +32,7 @@ export const Gallery = ({data}) => {
         .map((image, index) => {
           return (
             <div key={index}>
-              <img src={image} key={`Image ${index}`} />
+              <img className="main-gallery-image" src={image} key={`Image ${index}`} />
             </div>
           )
         })}
