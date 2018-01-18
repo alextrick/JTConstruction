@@ -14,7 +14,9 @@ const ContactForm = ({ data }) => {
   
     return (
       <div className="section contact">
-        <ScrollableAnchor id={"contact"}><h3 className="title">Contact</h3></ScrollableAnchor>
+        <ScrollableAnchor id={"contact"}>
+          <h3 className="title">Contact</h3>
+        </ScrollableAnchor>
         <p>
             Illum dicam denique vix ut. Mei ullum appellantur ut, per id animal suscipit omittantur. 
             Ornatus percipit similique mei ne, ex vis dicit consulatu.

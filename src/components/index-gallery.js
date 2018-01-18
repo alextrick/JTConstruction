@@ -36,7 +36,9 @@ const IndexGallery = ({ data }) => {
 
   return (
     <div className="section gallery">
-      <ScrollableAnchor id={"gallery"}><h3 className="title">Gallery</h3></ScrollableAnchor>
+      <ScrollableAnchor id={"gallery"}>
+        <h3 className="title">Gallery</h3>
+      </ScrollableAnchor>
       <p>Use the arrows to browse and select an image to view the gallery.</p>
       <hr />
       <Fade bottom delay={0} fraction={0.05}>

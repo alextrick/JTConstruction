@@ -9,7 +9,7 @@
 html {
     font-family:  'Merriweather', serif;
     font-size: 16;
-    color: #333;
+    color: #444;
 }
 
 nav {
@@ -26,11 +26,11 @@ a:visited {
     color: #3f51b5;
 }
 
-nav a {
+a {
     text-decoration: none;
 }
 
-nav a:hover {
+a:hover {
     color:rgb(83, 98, 202);
 }
 
@@ -102,7 +102,6 @@ hr {
 /* Header Styling */
 
 .header {
-    // position: absolute;
     width: 100%;
     max-width: 1400px;
     display: flex;
@@ -121,29 +120,45 @@ hr {
     }
 }
 
+.header-logo {
+    width: 6rem;
+    height: 6rem;
+}
 .header h2 {
     font-family: "Quicksand", sans-serif
 }
 
+.header-phone {
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .header nav {
     display: flex;
-    margin-right: -1rem;
+    flex-grow: 0.33;
 }
 
 .header nav li {
     margin: 0 1rem;
+    font-size: 1.5rem;
 }
 
 .header-burger-menu {
     display: none;
-    margin-right: 0.3rem;
+    margin-right: 0.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.header-burger-menu:hover > * {
+    background-color: #888;
 }
 
 .header-burger-top, .header-burger-middle, .header-burger-bottom {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.2rem;
-    background-color: black;
-    margin-bottom: 0.4rem;
+    background-color: #444;
+    margin-bottom: 0.5rem;
     transition: all 0.3s;
 }
 
@@ -173,7 +188,7 @@ hr {
 .hero {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
     text-align: center;
     max-width: 100%;
@@ -182,8 +197,8 @@ hr {
 
 .hero-banner {
     flex-basis: 60%;
-    width: 700px;
-    max-width: 100%;
+    width: 50vw;
+    max-width: 800px;
     background-color: #80a3db;
     max-height: 80vh;
 }
@@ -191,15 +206,18 @@ hr {
 .hero-info {
     flex-basis: 40%;
     padding: 0 1rem 0 1rem;
+    margin: 0 auto;
 }
 
 .hero h1 {
-    font: bold 40px "Quicksand", sans-serif;
+    font: bold 2rem "Quicksand", sans-serif;
     margin: 2rem 0 1rem 0;
 }
 
 .hero h3 {
-    font: normal 24px "Merriweather", serif;
+
+    font: normal 1.5rem "Merriweather", serif;
+    margin-top: 2rem;
     margin-bottom: 3rem;
 }
 
@@ -211,11 +229,17 @@ hr {
 
 .hero-content-area {
     width: 100%;
-    max-width: 1600px;
-    margin: 4rem auto 0 auto;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 /* Gallery Styles */
+
+.gallery {
+    width: 100%;
+    margin: 0 auto;
+}
 
 .img {
     height: auto;
@@ -249,11 +273,12 @@ hr {
 
 .gallery-overlay-text {
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: 0.3s;
 }
 
 .gallery-image:hover .img {
@@ -262,6 +287,10 @@ hr {
 
 .gallery-image:hover .gallery-overlay {
     opacity: 1;
+}
+
+.gallery-image:hover .gallery-overlay-text {
+    font-size: 2.5rem;
 }
 
 .swiper-container {
@@ -302,24 +331,33 @@ hr {
     text-align: center;
     margin-bottom: 1rem;
 }
-
 .services .grid li i {
     color: #8c9eff;
 }
-
 .services .grid li h4 {
     font-size: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
-
 .service-container {
     border-radius: 50%;
     background-color: white;
     width: 8rem;
     height: 8rem;
-    margin: 1rem auto;
+    margin: 0.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.service-container:hover > * {
+    width: 6rem;
+    height: 6rem;
+}
+.service-icon {
+    width: 5.5rem;
+    height: 5.5rem;
+    transition: 0.2s;
+}
 /* Contact */
 
 form {
@@ -352,7 +390,7 @@ input, textarea {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #607d8b;
+    background-color: #444;
     color: #fff;
     padding: 20px 0;
 }
@@ -380,7 +418,13 @@ input, textarea {
 @media screen and (max-width: 1300px) {
     .hero h1 {
         margin-top: 0;
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    .hero-info {
+        padding: 0;
+    }
+    .hero-info h3 {
+        font-size: 1.4rem;
     }
     
     .img {
@@ -404,18 +448,25 @@ input, textarea {
     footer ul li {
         margin: 0 8px;
     }
-    .contact form {
-        width: 80%;
+    form {
+        width: 80vw;
     }
 }
 
 @media screen and (max-width: 1150px) {
+
     .hero h3 {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        margin-top: 0;
+        padding: 0;
     }
 }
 
 @media screen and (max-width: 1000px) {
+    .header nav li {
+        font-size: 1.25rem;
+    }
     .hero * {
         flex-basis: 100%;
     }
@@ -424,6 +475,7 @@ input, textarea {
     }
     .hero-banner{ 
         width: 100vw;
+        margin: 0 auto;
     }
     .hero-info {
         padding: 1rem;
@@ -439,17 +491,13 @@ input, textarea {
         margin-left: 1rem;
         margin-right: 1rem;
     }
-    .contact form {
-        width: 90%;
-        height: auto;
-    }
-    .contact form input, .contact form textarea {
-        flex-basis: 100%;
-        margin: 0 0 1.25rem 0;
+    form {
+        width: 90vw; 
     }
     .services .grid li {
         flex-basis: 50%;
         padding: 1rem;
+        margin-bottom: 0;
     }
 }
 
@@ -460,10 +508,14 @@ input, textarea {
         padding: 1rem 0;
     }
     .header {
-        padding: 0.5rem;
         position: fixed;
         background-color: white;
         z-index: 2;
+        padding: 0.2rem 0.2rem 0 0.2rem;
+    }
+    .header-logo {
+        width: 3rem;
+        height: 3rem;
     }
     .header h2 {
         margin: 0;

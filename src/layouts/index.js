@@ -7,9 +7,11 @@ import "./normalize.css";
 import './index.css';
 import './swiper.min.css';
 
+import iconJTLogo from '../images/JTlogo.svg';
+
 const Header = () => (
   <div className="header">
-    <h2><Link to="/" >Joseph Thomas Construction</Link></h2>
+    <Link to="/" ><img className="header-logo" src={iconJTLogo} /></Link>
     <div className="header-burger-menu">
         <div className="header-burger-top"></div>
         <div className="header-burger-middle"></div>
@@ -19,7 +21,9 @@ const Header = () => (
         <li><a href="/#gallery" >Gallery</a></li>
         <li><a href="/#services" >Services</a></li>
         <li><a href="/#contact" >Contact</a></li>
+        <li className="header-phone" ><a href="tel:+447884444444">Phone: (+44)7884 444 444</a></li>
     </nav>
+    
   </div>
 )
 

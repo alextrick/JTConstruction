@@ -10,8 +10,8 @@ const Hero = ({ banner }) => {
             <div className="hero">
               <Img className="hero-banner" sizes={banner} />
               <div className="hero-info">
-                <h1>Blah blah Blah</h1>
-                <h3>Lorem ipsum dolor sit amet, eu atomorum salutandi reformidans vix, ex magna malorum usu, legere platonem consequat eu qui. Libris gloriatur ius cu, no sit lorem repudiare cotidieque. Nam in virtute officiis platonem. In sed invenire deseruisse. Id vim quidam sapientem reprehendunt, eum ut ancillae molestie incorrupte.</h3>
+                <h1>Joe Thomas Construction</h1>
+                <h3>A passionate builder who takes pride in his work and loves what he does. With a wide range of professional contacts to recommend throughout the process, JT Construction can come in at any stage of a building project and can help advise from start to finish.</h3>
                 <a href="/#contact" className="btn">Contact Now</a>
               </div>
             </div>

@@ -1,0 +1,16 @@
+<svg width="320" height="320" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <filter height="200%" width="200%" y="-50%" x="-50%" id="svg_1_blur">
+   <feGaussianBlur stdDeviation="0" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <rect rx="46" id="svg_1" height="320" width="320" y="0" x="0" stroke-width="1.5" fill="#444"/>
+  <rect stroke="#444444" id="svg_9" height="159" width="30" y="0" x="100" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#fff"/>s
+  <rect stroke="#444444" id="svg_20" height="210" width="30" y="110" x="210" fill-opacity="null" stroke-opacity="null" stroke-width="0" fill="#fff"/>
+  <rect stroke="#444444" id="svg_21" height="30" width="60" y="200" x="0" stroke-width="0" fill="#fff"/>
+  <rect stroke="#444444" id="svg_23" height="30" width="198" y="90" x="122" stroke-width="0" fill="#fff"/>
+  <path id="svg_24" d="m130,134c0,60 0,-52 0,23c0,72 -60,74 -73,73c-14,0 -43,0 -45,0c1,0 0,-25 45 ,-31c0,0 40,3 43,-43" fill="#fff"/>
+ </g>
+</svg>
