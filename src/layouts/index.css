@@ -108,6 +108,7 @@ hr {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items:center;
+    align-content: center;
     padding: 1rem 2rem;
     animation: 1s fadein 0.4s forwards;
     opacity: 0;
@@ -132,16 +133,32 @@ hr {
     flex-grow: 1.5;
     display: flex;
     justify-content: flex-end;
+    align-content: center;
+}
+
+.header-phone a {
+    padding: 0.5rem;
+    color: white;
+    font-size: 1.1rem;
+    display: flex;
+    align-content: center;
+}
+
+.header-phone-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.75rem;
 }
 
 .header nav {
     display: flex;
-    flex-grow: 0.25;
+    flex-grow: 0.4;
+    align-items: baseline;
+    font-size: 1.4rem;
 }
 
 .header nav li {
     margin: 0 1rem;
-    font-size: 1.4rem;
 }
 
 .header-burger-menu {
@@ -158,25 +175,24 @@ hr {
     height: 0.25rem;
     width: 2.2rem;
     background-color: #444;
-    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
     transition: all 0.3s;
 }
-
 .header-burger-bottom {
     margin-bottom: 0;
 }
 
-.header-burger-top-activated {
-    transform: rotate(45deg) scale(1.25);
+.header-burger-top-active {
+    transform: rotate(45deg);
     transform-origin: 0 0;
 }
-.header-burger-middle-activated {
+.header-burger-middle-active {
     opacity: 0;
     transform: scaleX(0);
     transform-origin: 0 0;
 }
-.header-burger-bottom-activated {
-    transform: rotate(-45deg) scale(1.25) translateX(-2px) translateY(-1px);
+.header-burger-bottom-active {
+    transform: rotate(-45deg) translateX(-2px) translateY(-2px);
     transform-origin: 0 0;
 }
 /* Hero Styles */
@@ -511,11 +527,20 @@ input, textarea {
     .header {
         background-color: white;
         z-index: 2;
-        padding: 0.4rem 0.4rem 0.125rem 0.4rem;
+        padding: 0.4rem;
     }
     .header-logo {
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        position: absolute;
+        top: 0.4rem;
+        transition: 0.3s ease-in-out;
+    }
+    .header-logo-active {
+        width: 7rem;
+        height: 7rem;
+        top: 3rem;
+        left: 0.5rem;
     }
     .header h2 {
         margin: 0;
@@ -524,9 +549,37 @@ input, textarea {
     .header nav {
         flex-basis: 100%;
         justify-content: center;
-        position: absolute;
+        align-content:  center;
+        align-items: flex-end;
+        position: relative;
+        flex-direction: column;
         margin: 0;
         visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        height: 0.1rem;
+        overflow: hidden;
+    }
+    .header .nav-active {
+        opacity: 1;
+        visibility: visible;
+        height: 7.25rem;
+    }
+    .header-phone {
+        flex-grow: 0;
+        display: flex;
+        justify-content: flex
+    }
+    .header-phone a {
+        font-size: 0.8rem;
+    }
+    .header-phone-icon {
+        height: 1rem;
+        width: 1rem;
+    }
+    .header nav li {
+        text-align: end;
+        margin-bottom: 0.2rem;
     }
     .header-burger-menu {
         display: block;
