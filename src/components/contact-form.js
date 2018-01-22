@@ -22,25 +22,23 @@ const ContactForm = ({ data }) => {
             Ornatus percipit similique mei ne, ex vis dicit consulatu.
         </p>
         <hr />
-        <Fade bottom>
-          <form name="contact"
-                method="post"
-                action="/thanks/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                >
-            <input type="hidden" name="form-name" value="contact" />
-            <p hidden>
-              <label>
-                Don’t fill this out: <input name="bot-field" />
-              </label>
-            </p>
-              <input name="name" type="text" placeholder="Name" />
-              <input name="email" type="email" placeholder="Email" required />
-              <textarea name="message" rows="12" placeholder="Please give some details about your project." required />
-              <button type="submit" value="Contact Now" className="btn">Contact Now</button>
-          </form>
-        </Fade>
+        <form name="contact"
+              method="post"
+              action="/thanks/"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              >
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label>
+              Don’t fill this out: <input name="bot-field" />
+            </label>
+          </p>
+            <input name="name" type="text" placeholder="Name" />
+            <input name="email" type="email" placeholder="Email" required />
+            <textarea name="message" rows="12" placeholder="Please give some details about your project." required />
+            <button type="submit" value="Contact Now" className="btn">Contact Now</button>
+        </form>
       </div>
     );
 }

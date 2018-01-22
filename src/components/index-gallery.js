@@ -40,24 +40,22 @@ const IndexGallery = ({ data }) => {
       </ScrollableAnchor>
       <p>Select an image to view the gallery.</p>
       <hr />
-      <Fade bottom delay={0} fraction={0.05}>
-        <Swiper {...params}>
-          { data.allMarkdownRemark.edges.map((image, index) => {
-              return (
-                <Link to={image.node.frontmatter.path} key={index}>
-                  <div className="gallery-image">
-                    <div className="gallery-preload-cover"></div>
-                    <img className="img swiper-lazy" data-src={image.node.frontmatter.thumbnail} alt={`A link to ${image.node.frontmatter.title} project`} onload="this.style.visibility = 'visible'" />
-                    <div className="gallery-overlay">
-                      <div className="gallery-overlay-text">{image.node.frontmatter.title}</div>
-                    </div>
+      <Swiper {...params}>
+        { data.allMarkdownRemark.edges.map((image, index) => {
+            return (
+              <Link to={image.node.frontmatter.path} key={index}>
+                <div className="gallery-image">
+                  <div className="gallery-preload-cover"></div>
+                  <img className="img swiper-lazy" data-src={image.node.frontmatter.thumbnail} alt={`A link to ${image.node.frontmatter.title} project`} />
+                  <div className="gallery-overlay">
+                    <div className="gallery-overlay-text">{image.node.frontmatter.title}</div>
                   </div>
-                </Link>
-              )
-            })
-          }
-        </Swiper>
-      </Fade>
+                </div>
+              </Link>
+            )
+          })
+        }
+      </Swiper>
     </div>
   );
 }

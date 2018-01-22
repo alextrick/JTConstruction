@@ -167,10 +167,6 @@ hr {
     margin-bottom: 0.2rem;
 }
 
-.header-burger-menu:hover > * {
-    background-color: #888;
-}
-
 .header-burger-top, .header-burger-middle, .header-burger-bottom {
     height: 0.25rem;
     width: 2.2rem;
@@ -272,7 +268,7 @@ hr {
 
   display: block;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -353,9 +349,6 @@ hr {
     text-align: center;
     margin-bottom: 1rem;
 }
-.services .grid li i {
-    color: #8c9eff;
-}
 .services .grid li h4 {
     font-size: 1.5rem;
     margin-top: 1rem;
@@ -374,11 +367,49 @@ hr {
 .service-container:hover > * {
     width: 6rem;
     height: 6rem;
+    opacity: 0.99;
 }
 .service-icon {
     width: 5.5rem;
     height: 5.5rem;
     transition: 0.2s;
+}
+
+.service {
+    position: relative;
+    display: inline-block;
+}
+
+.service .service-tooltip {
+    visibility: hidden;
+    width: 20vw;
+    max-width: 300px;
+    background-color: #444;
+    color: white;
+    text-align: start;
+    padding: 5px 0;
+    border-radius: 0.5rem;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.service .service-tooltip ul li {
+    margin: 1rem;
+    padding: 0;
+}
+
+.service .service-tooltip ul {
+    list-style: disc inside;
+}
+
+.service:hover .service-tooltip {
+    visibility: visible;
+    opacity: 0.9;
 }
 /* Contact */
 
@@ -526,7 +557,7 @@ input, textarea {
     }
     .header {
         background-color: white;
-        z-index: 2;
+        z-index: 1;
         padding: 0.4rem;
         position: absolute;
         top: 0;
@@ -589,6 +620,7 @@ input, textarea {
     }
     .hero {
         min-height: 600px;
+        margin-top: 3.2rem;
     }
     .hero h1 {
         font-size: 2rem;
