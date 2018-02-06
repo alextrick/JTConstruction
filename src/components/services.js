@@ -38,7 +38,7 @@ const Services = () => {
             <ScrollableAnchor id={"services"}>
                 <h3 className="title">Services</h3>
             </ScrollableAnchor>
-            <p>Id timeam copiosae mandamus vel, mea appetere instructior no. Quem case delenit ei pro, id admodum mandamus usu.</p>
+            <p>Select an icon for more information.</p>
             <hr />
             <Fade bottom>
                 <ul className="grid">
@@ -46,56 +46,42 @@ const Services = () => {
                         <Service
                             icon={iconGeneralBuilding}
                             title="General Building"
-                            tooltipItems={["Item 1", "Item 2", "Item 3"]}
+                            tooltipItems={["Project Management", "Logistics"]}
                         />
                     </li>
                     <li>
                         <Service
                             icon={iconRenovations}
                             title="Renovations"
-                            tooltipItems={["Item 1", "Item 2"]}
+                            tooltipItems={["Property restoration", "Modernising outdated interiors", "Utility rooms"]}
                         />
                     </li>
                     <li>
                         <Service
                             icon={iconExtensions}
                             title="Extensions"
-                            tooltipItems={["Item 1", "Item 2"]}
+                            tooltipItems={["Groundworks", "Brickwork", "Building and planning guidance", "Roofing"]}
                         />
                     </li>
                     <li>
                         <Service
                             icon={iconKitchens}
                             title="Kitchens"
-                            tooltipItems={["Item 1", "Item 2"]}
+                            tooltipItems={["Fitting", "Cabinets", "Worktops"]}
                         />
                     </li>
                     <li>
                         <Service
                             icon={iconBathrooms}
                             title="Bathrooms"
-                            tooltipItems={["Item 1", "Item 2"]}
+                            tooltipItems={["Drainage stacks", "Unit fittings", "Tiling"]}
                         />
                     </li>
                     <li>
                         <Service
                             icon={iconCarpentry}
                             title="Carpentry"
-                            tooltipItems={["Item 1", "Item 2"]}
-                        />
-                    </li>
-                    <li>
-                        <Service
-                            icon={iconUtilityRooms}
-                            title="Utility Rooms"
-                            tooltipItems={["Item 1", "Item 2"]}
-                        />
-                    </li>
-                    <li>
-                        <Service
-                            icon={iconTiling}
-                            title="Tiling"
-                            tooltipItems={["Item 1", "Item 2"]}
+                            tooltipItems={["Flooring", "Door Hanging", "Decorative"]}
                         />
                     </li>
                 </ul>
