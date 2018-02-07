@@ -101,7 +101,7 @@ hr {
 
 /* Header Styling */
 
-.header {
+.header, .contact-phone {
     width: 100%;
     max-width: 1400px;
     display: flex;
@@ -150,14 +150,14 @@ hr {
     margin-right: 0.75rem;
 }
 
-.header nav {
+.header nav, .contact-phone {
     display: flex;
     flex-grow: 0.4;
     align-items: baseline;
     font-size: 1.4rem;
 }
 
-.header nav li {
+.header nav li, .contact-phone li {
     margin: 0 1rem;
 }
 
@@ -165,6 +165,10 @@ hr {
     display: none;
     margin-right: 0.4rem;
     margin-bottom: 0.2rem;
+}
+
+.header-burger-menu:hover {
+    cursor: pointer;
 }
 
 .header-burger-top, .header-burger-middle, .header-burger-bottom {
@@ -257,7 +261,6 @@ hr {
     max-height: 22.5vw;
     object-fit: cover;
     transition: all 0.3s;
-    margin: 0 0 2rem;
 }
 
 .img:after {  
@@ -297,7 +300,6 @@ hr {
     opacity: 0;
     transition: 0.4s ease;
 }
-
 .gallery-overlay-text {
     color: white;
     font-size: 2rem;
@@ -322,17 +324,36 @@ hr {
     margin: 0 auto;
     overflow: hidden;
 }
-.main-gallery .swiper-container {
+.main-gallery .gallery-container {
     width: 60vw;
-    height: auto;
+    height: 600px;
     margin: 0 auto;
 }
+
+.main-gallery .gallery-container .swiper-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2.5rem;
+}
+
 .main-gallery-image {
-    margin-bottom: 2rem;
+    object-fit: cover;
+    width: auto;
+    max-height: 100%;
+}
+.main-gallery-details p {
+    text-align: left;
+    width: 90vw;
+}
+.section.gallery .swiper-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
 }
 .swiper-container img {
     width: 100%;
     height: auto;
+    margin-bottom: 2rem;
 }
 .swiper-lazy-preloader {
     margin-top: 5rem;
@@ -342,9 +363,10 @@ hr {
 
 .services .grid {
     max-width: 1400px;
+    justify-content: space-between;
 }
 .services .grid li {
-    padding: 1rem;
+    padding: 1rem 3rem;
     flex-basis: 33.3%;
     text-align: center;
     margin-bottom: 1rem;
@@ -393,7 +415,7 @@ hr {
     z-index: 1;
     left: 50%;
     transform: translateX(-50%);
-    top: 100%;
+    top: 105%;
     opacity: 0;
     transition: all 0.2s;
     height: 0rem;
@@ -403,28 +425,28 @@ hr {
     margin: 1rem;
     padding: 0;
     text-align: left;
+    font-family: "Quicksand", sans-serif;
 }
 
 .service .service-tooltip ul {
     list-style: disc outside;
     text-align: left;
     margin: 0 auto;
-    padding-left: 2rem;
+    padding: 0 2rem 0 2rem;
 }
 
 .service:hover .service-tooltip {
     visibility: visible;
     opacity: 1;
     height: auto;
+    margin: 0 auto;
 }
 /* Contact */
 
 form {
     display: flex;
     flex-direction: column;
-    // align-items: center;
     justify-content: center;
-    // flex-wrap: wrap;
     width: 60vw;
 }
 
@@ -443,6 +465,11 @@ input, textarea {
     width: 100%;
 }
 
+.contact-phone {
+    margin-top: 1rem;
+    width: 800px;
+}
+
 /* Footer */
 
 .footer {
@@ -451,7 +478,7 @@ input, textarea {
     justify-content: space-around;
     background-color: #444;
     color: #fff;
-    padding: 20px 0;
+    padding: 1rem 0;
 }
 
 .footer ul {
@@ -459,18 +486,20 @@ input, textarea {
 }
 
 .footer ul li {
-    margin-left: 16px;
+    margin-left: 1rem;
 }
 
 .footer p {
-    text-transform: uppercase;
-    font-size: 15px;
+    font-size: 1rem;
     opacity: 0.6;
     align-self: center;
+    color: #fff;
 }
 
-.footer i {
-    color: white;
+.footer img {
+    fill: white;
+    width: 2rem;
+    height: 2rem;
 }
 
 
@@ -520,7 +549,7 @@ input, textarea {
 }
 
 @media screen and (max-width: 1000px) {
-    .header nav li {
+    .header nav li, .contact-phone li {
         font-size: 1.25rem;
     }
     .hero * {
@@ -610,10 +639,10 @@ input, textarea {
         display: flex;
         justify-content: flex
     }
-    .header-phone a {
+    .header nav .header-phone a {
         font-size: 0.8rem;
     }
-    .header-phone-icon {
+    .header nav .header-phone-icon {
         height: 1rem;
         width: 1rem;
     }
@@ -645,11 +674,22 @@ input, textarea {
     .main-gallery .swiper-container {
         width: 100vw;
     }
+    .main-gallery-info {
+        margin-top: 3rem;
+    }
     .services .grid li {
         flex-basis: 100%;
     }
 
     .services .grid li h4 {
         font-size: 1.2rem;
+    }
+    .contact-phone {
+        flex-direction: column;
+        max-width: 80vw;
+        text-align: center;
+    }
+    .contact-phone li {
+        margin: 1rem auto;
     }
 }

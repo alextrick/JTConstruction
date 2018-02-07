@@ -3,6 +3,8 @@ import React from 'react';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import { Fade } from 'react-reveal';
 
+import PhoneButton from '../components/phone-button';
+
 const ContactForm = ({ data }) => {
 
     const handleClick = () => {
@@ -39,6 +41,11 @@ const ContactForm = ({ data }) => {
             <textarea name="message" rows="12" placeholder="Please give some details about your project. *" required />
             <button type="submit" value="Contact Now" className="btn">Contact Now</button>
         </form>
+        <ul className="contact-phone">
+          <li>Alternatively, contact via phone: </li>
+          <PhoneButton />
+        </ul>
+        
       </div>
     );
 }

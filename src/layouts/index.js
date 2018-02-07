@@ -7,8 +7,12 @@ import "./normalize.css";
 import './index.css';
 import './swiper.min.css';
 
+import PhoneButton from '../components/phone-button';
+
 import iconJTLogo from '../images/JTlogo.svg';
-import iconPhone from '../images/phone.svg';
+import iconContact from '../images/contact.svg';
+import iconFacebook from '../images/facebook.svg';
+import iconInstagram from '../images/instagram.svg';
 
 // Burger menu
 
@@ -22,7 +26,7 @@ class Header extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
+  //Changes state when burger menu is clicked.
   handleClick() {
     const currentState = this.state.isActive;
     this.setState({ isActive: !currentState });
@@ -41,12 +45,7 @@ class Header extends React.Component {
             <li><a href="/#gallery" >Gallery</a></li>
             <li><a href="/#services" >Services</a></li>
             <li><a href="/#contact" >Contact</a></li>
-            <li className="header-phone" >
-              <a href="tel:+447884444444" className="btn">
-                <img className="header-phone-icon" src={iconPhone} alt="Phone number" />
-                (+44)7884 444 444
-              </a>
-            </li>
+            <PhoneButton />
         </nav>
       </div>
     )
@@ -55,11 +54,11 @@ class Header extends React.Component {
 
 const Footer = () => (
   <div className="footer">
-    <p>Joe Thomas Construction</p>
+    <p>JT Construction</p>
     <ul>
-      <li><Link to="#"><i className="fa fa-twitter-square fa-2x">T</i></Link></li>
-      <li><Link to="#"><i className="fa fa-facebook-square fa-2x">F</i></Link></li>
-      <li><Link to="#"><i className="fa fa-snapchat-square fa-2x">I</i></Link></li>
+      <li><Link to="/#contact"><img className="footer-icon" src={iconContact} alt="Contact" /></Link></li>
+      <li><a href="https://www.facebook.com/josephthomasconstruction/"><img className="footer-icon" src={iconFacebook} alt="Facebook" /></a></li>
+      <li><Link to="#"><img className="footer-icon" src={iconInstagram} alt="Instagram" /></Link></li>
     </ul>
   </div>
 )

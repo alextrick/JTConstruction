@@ -13,16 +13,16 @@ const IndexGallery = ({ data }) => {
       el: '.swiper-scrollbar',
       draggable: true,
     },
+    watchOverflow: true,
     spaceBetween: 20,
     loop: true,
     preloadImages: false,
     lazy: true,
     loadPrevNext: true,
-    loadPrevNextAmount: 5,
+    loadPrevNextAmount: 3,
     autoplay: {
       delay: 6000,
     },
-    direction: "horizontal",
     breakpoints: {
       800: {
         slidesPerView: 1,

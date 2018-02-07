@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import Swiper from 'react-id-swiper';
-import { Fade } from 'react-reveal';
 
 export const Gallery = ({data}) => {
   const frontmatter = data;
@@ -13,11 +12,16 @@ export const Gallery = ({data}) => {
         el: '.swiper-scrollbar',
         draggable: true,
       },
-      loop: true,
-      slidesPerView: "auto",
-      autoHeight: true,
+      watchOverflow: true,
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 30,
       autoplay: {
         delay: 6000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
       },
     };
 
@@ -26,17 +30,18 @@ export const Gallery = ({data}) => {
   }
 
   return (
-    <Swiper {...params}>
-      {gal
-        .filter(image => image != null)
-        .map((image, index) => {
-          return (
-            <div key={index}>
-              <img className="main-gallery-image" src={image} key={`Image ${index}`} />
-            </div>
-          )
-        })}
-    </Swiper>
+    <div className="gallery-container">
+      <Swiper {...params}>
+        {gal
+          .filter(image => image != null)
+          .map((image, index) => {
+            return (
+              <img key={index} className="main-gallery-image" src={image} key={`Image ${index}`} />
+            )
+          })}
+      </Swiper>
+    </div>
+    
   )
 }
 
@@ -48,19 +53,17 @@ export default function Template({
   return (
     <div>
       <Helmet title={`Joe Thomas Construction - ${frontmatter.title}`} />
-      <div className="section main-gallery">
+      <div className="section main-gallery-info">
         <h3 className="title">{frontmatter.title}</h3>
         <hr />
-        <Fade bottom>
-          <Gallery data={frontmatter} />
-        </Fade>
-      </div>
-      <div className="section">
-        <h3 className="title">Project details</h3>
-        <hr />
-        <Fade bottom>
+        <div className="main-gallery-details">
           <p>{frontmatter.description}</p>
-        </Fade>
+        </div>
+      </div>
+      <div className="section main-gallery">
+        <h3 className="title">Project Gallery</h3>
+        <hr />
+          <Gallery data={frontmatter} />
       </div>
     </div>
   );

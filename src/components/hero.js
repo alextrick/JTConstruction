@@ -5,7 +5,7 @@ import { Fade } from 'react-reveal';
 
 const Hero = ({ banner }) => {
     return (
-    <div className="section hero-content-area">
+      <div className="section hero-content-area">
         <Fade bottom delay={500}>
             <div className="hero">
               <Img className="hero-banner" sizes={banner} />
