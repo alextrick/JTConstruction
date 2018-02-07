@@ -45,7 +45,6 @@ const ContactForm = ({ data }) => {
           <li>Alternatively, contact via phone: </li>
           <PhoneButton />
         </ul>
-        
       </div>
     );
 }

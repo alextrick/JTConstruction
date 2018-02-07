@@ -18,8 +18,8 @@ const IndexGallery = ({ data }) => {
     loop: true,
     preloadImages: false,
     lazy: true,
-    loadPrevNext: true,
-    loadPrevNextAmount: 4,
+    // loadPrevNext: true,
+    // loadPrevNextAmount: 4,
     autoplay: {
       delay: 6000,
     },
@@ -45,8 +45,8 @@ const IndexGallery = ({ data }) => {
             return (
               <Link to={image.node.frontmatter.path} key={index}>
                 <div className="gallery-image">
-                  <div className="gallery-preload-cover"></div>
-                  <img className="img swiper-lazy" data-src={image.node.frontmatter.thumbnail} alt={`A link to ${image.node.frontmatter.title} project`} />
+                  <img className="swiper-lazy img" data-src={image.node.frontmatter.thumbnail} alt={`A link to ${image.node.frontmatter.title} project`} />
+                  <div class="swiper-lazy-preloader"></div>
                   <div className="gallery-overlay">
                     <div className="gallery-overlay-text">{image.node.frontmatter.title}</div>
                   </div>
