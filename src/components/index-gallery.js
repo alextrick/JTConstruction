@@ -19,7 +19,7 @@ const IndexGallery = ({ data }) => {
     preloadImages: false,
     lazy: true,
     loadPrevNext: true,
-    loadPrevNextAmount: 3,
+    loadPrevNextAmount: 4,
     autoplay: {
       delay: 6000,
     },
