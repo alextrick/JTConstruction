@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import Img from 'gatsby-image';
 
 import Swiper from 'react-id-swiper';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -45,8 +46,8 @@ const IndexGallery = ({ data }) => {
             return (
               <Link to={image.node.frontmatter.path} key={index}>
                 <div className="gallery-image">
-                  <img className="swiper-lazy img" data-src={image.node.frontmatter.thumbnail} alt={`A link to ${image.node.frontmatter.title} project`} />
-                  <div class="swiper-lazy-preloader"></div>
+                  <Img className="swiper-lazy img" sizes={image.node.frontmatter.thumbnail.childImageSharp.sizes} alt={`A link to ${image.node.frontmatter.title} project`} />
+                  <div className="swiper-lazy-preloader"></div>
                   <div className="gallery-overlay">
                     <div className="gallery-overlay-text">{image.node.frontmatter.title}</div>
                   </div>

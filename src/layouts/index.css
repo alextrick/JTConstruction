@@ -44,7 +44,7 @@ a:hover {
     cursor: pointer;
     font-family: "Quicksand", sans-serif;
     font-weight: 400;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
@@ -225,6 +225,11 @@ hr {
     margin: 0 auto;
 }
 
+.hero-info p {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
 .hero h1 {
     font: bold 2rem "Quicksand", sans-serif;
     margin: 2rem 0 1rem 0;
@@ -232,12 +237,11 @@ hr {
 
 .hero h3 {
     font: normal 1.5rem "Merriweather", serif;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin: 1.5rem auto;
 }
 
 .hero .btn {
-   padding: 20px 46px;
+   padding: 1.25rem 2.75rem;
    color: white;
    margin-top: 3rem;
 }
@@ -482,10 +486,16 @@ input, textarea {
     .hero-info {
         padding: 0;
     }
-    .hero-info h3 {
+    .hero h3 {
         font-size: 1.4rem;
+        margin-bottom: 0;
     }
-    
+    .hero-info p {
+        margin: 2rem auto;
+    }
+    .hero .btn {
+        padding: 1rem 2.25rem;
+    }
     .img {
         flex-basis: 50%;
         max-height: 27.5vw;
@@ -513,8 +523,11 @@ input, textarea {
 
     .hero h3 {
         font-size: 1.2rem;
-        margin-bottom: 2.5rem;
-        margin-top: 0;
+        margin: 0;
+    }
+
+    .hero p {
+        margin: 1rem auto;
         padding: 0;
     }
 }
@@ -635,7 +648,7 @@ input, textarea {
         font-size: 1rem;
     }
     .hero a.btn {
-        padding: 15px 40px;
+        padding: 1rem 2.25rem;
     }
     .img {
         flex-basis: 100%;

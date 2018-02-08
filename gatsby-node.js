@@ -12,8 +12,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
-          html
           id
           frontmatter {
             date
@@ -38,4 +36,28 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           });
         });
     });
+}
+
+exports.onCreateNode = ({
+  node,
+  getNode,
+  loadNodeContent,
+  boundActionCreators,
+}) => {
+  const { createNode, createNodeField } = boundActionCreators
+  const { frontmatter } = node
+  if (frontmatter) {
+    const { thumbnail } = frontmatter
+    if (!node.fields) {
+      const value = frontmatter.thumbnail = path.relative(
+        path.dirname(node.fileAbsolutePath),
+        path.join(__dirname, '/static/', thumbnail)
+      )
+      createNodeField({
+        node,
+        name: `path`,
+        value
+      })
+    }
+  }
 }
