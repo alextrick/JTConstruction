@@ -58,23 +58,40 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-            thumbnail {
+            thumbnail
+            path
+            title
+          }
+          fields {
+            imagePath {
               childImageSharp {
-                sizes(maxWidth: 650) {
+                sizes(maxWidth: 600) {
                   ...GatsbyImageSharpSizes
                 }
               }
             }
-            path
-            title
           }
         }
       }
     }
     heroBanner: imageSharp(id: { regex: "/kitchen/" }) {
-      sizes(maxWidth: 600) {
+      sizes(maxWidth: 1000) {
         ...GatsbyImageSharpSizes
       }
     }
   }
 `;
+
+
+
+// thumbnail {
+
+// }
+
+// {
+//   childImageSharp {
+//     sizes(maxWidth: 650) {
+//       ...GatsbyImageSharpSizes
+//     }
+//   }
+// }

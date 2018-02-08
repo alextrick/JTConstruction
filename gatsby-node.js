@@ -38,6 +38,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     });
 }
 
+//changes thumbnail path to correct relative path 
 exports.onCreateNode = ({
   node,
   getNode,
@@ -48,14 +49,18 @@ exports.onCreateNode = ({
   const { frontmatter } = node
   if (frontmatter) {
     const { thumbnail } = frontmatter
-    if (!node.fields) {
-      const value = frontmatter.thumbnail = path.relative(
+    if (thumbnail) {
+      // const value = frontmatter.thumbnail = path.relative(
+      //   path.dirname(node.fileAbsolutePath),
+      //   path.join(__dirname, '/static/', thumbnail)
+      // )
+      let value = path.relative(
         path.dirname(node.fileAbsolutePath),
-        path.join(__dirname, '/static/', thumbnail)
-      )
+        path.join(__dirname, '/src', thumbnail)
+      );
       createNodeField({
         node,
-        name: `path`,
+        name: `imagePath`,
         value
       })
     }

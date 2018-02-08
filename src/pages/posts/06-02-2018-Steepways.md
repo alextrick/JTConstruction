@@ -2,7 +2,7 @@
 title: Steepways
 path: /steepways
 file: /images/uploads/Steepways-1.jpg
-thumbnail: "/images/uploads/Steepways-1.jpg"
+thumbnail: /images/uploads/Steepways-1.jpg
 date: 2018-02-06T16:47:22.841Z
 galleryImages:
   - /images/uploads/Steepways-1.jpg
