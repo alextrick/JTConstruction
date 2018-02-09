@@ -8,22 +8,21 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/`,
+        name: `src`,
+        path: `${__dirname}/src`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/static/`,
+        name: `static`,
+        path: `${__dirname}/static`,
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-plugin-sharp`,
           {
             resolve: `gatsby-remark-images`,
             options: {

@@ -61,14 +61,11 @@ export const query = graphql`
             thumbnail
             path
             title
+            
           }
-          fields {
-            imagePath {
-              childImageSharp {
-                sizes(maxWidth: 600) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
+          childImageSharp {
+            sizes(maxWidth: 540) {
+              ...GatsbyImageSharpSizes
             }
           }
         }
@@ -91,6 +88,14 @@ export const query = graphql`
 // {
 //   childImageSharp {
 //     sizes(maxWidth: 650) {
+//       ...GatsbyImageSharpSizes
+//     }
+//   }
+// }
+
+// {
+//   childImageSharp {
+//     sizes(maxWidth: 600) {
 //       ...GatsbyImageSharpSizes
 //     }
 //   }
