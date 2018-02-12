@@ -65,7 +65,7 @@ export default function Template({
       </div>
       <div className="section main-gallery">
         <h3 className="title">Project Gallery</h3>
-        <p>Select an image to view full size.</p>
+        <p>Select an image to view original.</p>
         <hr />
           <Gallery data={data.markdownRemark.children} />
       </div>
