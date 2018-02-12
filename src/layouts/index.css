@@ -508,7 +508,12 @@ input, textarea {
     .main-gallery .gallery-container {
         width: 80vw;
     }
-
+    .main-gallery-image.gatsby-image-wrapper img {
+       margin-left: auto;
+       margin-right: auto;
+       left: 0;
+       right: 0;
+    }
     footer {
         flex-direction: column;
     }
@@ -538,6 +543,12 @@ input, textarea {
     .gallery-image:hover .gallery-overlay-text {
         font-size: 2rem;
     }
+    .main-gallery-image.gatsby-image-wrapper img {
+       margin-left: auto;
+       margin-right: auto;
+       left: 0;
+       right: 0;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -562,6 +573,12 @@ input, textarea {
     }
     .swiper-container {
         width: 90vw;
+    }
+    .main-gallery-image.gatsby-image-wrapper img {
+       margin-left: auto;
+       margin-right: auto;
+       left: 0;
+       right: 0;
     }
     form {
         width: 90vw; 
@@ -668,6 +685,12 @@ input, textarea {
     }
     .main-gallery-info {
         margin-top: 3rem;
+    }
+    .main-gallery-image.gatsby-image-wrapper img {
+       margin-left: auto;
+       margin-right: auto;
+       left: 0;
+       right: 0;
     }
     .services .grid li {
         flex-basis: 100%;
