@@ -16,11 +16,6 @@ const IndexGallery = ({ data }) => {
     },
     watchOverflow: true,
     spaceBetween: 20,
-    loop: true,
-    preloadImages: false,
-    lazy: true,
-    // loadPrevNext: true,
-    // loadPrevNextAmount: 4,
     autoplay: {
       delay: 6000,
     },
@@ -41,15 +36,13 @@ const IndexGallery = ({ data }) => {
       </ScrollableAnchor>
       <p>Select an image to view the gallery.</p>
       <hr />
-      {console.log(data.allMarkdownRemark.edges)}
-      {/* <Img className="swiper-lazy img" sizes={data.allMarkdownRemark.edges[0].node.childImageSharp.sizes}  /> */}
+      {console.log(data.allMarkdownRemark.edges[0].node.children)}
       <Swiper {...params}>
         { data.allMarkdownRemark.edges.map((image, index) => {
             return (
               <Link to={image.node.frontmatter.path} key={index}>
                 <div className="gallery-image">
-                  <Img className="swiper-lazy img" sizes={image.node.childImageSharp.sizes} alt={`A link to ${image.node.frontmatter.title} project`} />
-                  <div className="swiper-lazy-preloader"></div>
+                  <Img className="img" sizes={image.node.childImageSharp.sizes} alt={`A link to ${image.node.frontmatter.title} project`} />
                   <div className="gallery-overlay">
                     <div className="gallery-overlay-text">{image.node.frontmatter.title}</div>
                   </div>

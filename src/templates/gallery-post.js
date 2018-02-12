@@ -1,42 +1,46 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
+import Img from 'gatsby-image';
+import Link from 'gatsby-link';
 
 import Swiper from 'react-id-swiper';
 
 export const Gallery = ({data}) => {
-  const frontmatter = data;
-  const gal = frontmatter.galleryImages;
 
   const params = {
       scrollbar: {
         el: '.swiper-scrollbar',
         draggable: true,
       },
-      watchOverflow: true,
-      slidesPerView: 'auto',
-      centeredSlides: true,
+      slidesPerView: 2,
       spaceBetween: 30,
-      autoplay: {
-        delay: 6000,
-      },
+      // autoplay: {
+      //   delay: 6000,
+      // },
+      autoHeight: true,
       pagination: {
         el: '.swiper-pagination',
         type: 'fraction',
       },
+      breakpoints: {
+        1200: {
+          slidesPerView: 1,
+        }
+      }
     };
-
-  if (gal.length <= 1) {
-    params.loop = false;
-  }
 
   return (
     <div className="gallery-container">
       <Swiper {...params}>
-        {gal
+        {data
           .filter(image => image != null)
           .map((image, index) => {
             return (
-              <img key={index} className="main-gallery-image" src={image} key={`Image ${index}`} />
+              <div key={index}>
+                <Link to={image.original.src}>
+                  <Img className="main-gallery-image" sizes={image.sizes} alt={`Image ${index}`} />
+                </Link>
+              </div>
             )
           })}
       </Swiper>
@@ -49,7 +53,6 @@ export default function Template({
   data
 }) {
   const { frontmatter } = data.markdownRemark;
-  const gal = frontmatter.galleryImages;
   return (
     <div>
       <Helmet title={`Joe Thomas Construction - ${frontmatter.title}`} />
@@ -62,8 +65,9 @@ export default function Template({
       </div>
       <div className="section main-gallery">
         <h3 className="title">Project Gallery</h3>
+        <p>Select an image to view full size.</p>
         <hr />
-          <Gallery data={frontmatter} />
+          <Gallery data={data.markdownRemark.children} />
       </div>
     </div>
   );
@@ -74,11 +78,19 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         path
         title
         description
-        galleryImages
+      }
+      children {
+        ... on ImageSharp {
+          sizes(maxWidth: 1000) {
+            ...GatsbyImageSharpSizes
+          }
+          original {
+            src
+          }
+        }
       }
     }
   }

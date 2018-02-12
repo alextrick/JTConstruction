@@ -8,7 +8,7 @@ const Hero = ({ banner }) => {
       <div className="section hero-content-area">
         <Fade bottom delay={500}>
             <div className="hero">
-              <Img className="hero-banner" sizes={banner} />
+              <Img className="hero-banner" sizes={banner} alt="An image of a kitchen" />
               <div className="hero-info">
                 <h1>Joe Thomas Construction</h1>
                 <h3>A passionate builder who takes pride in his work and loves what he does.</h3>

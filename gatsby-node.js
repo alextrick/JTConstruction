@@ -27,7 +27,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       if (result.errors) {
         return Promise.reject(result.errors);
       }
-
       result.data.allMarkdownRemark.edges
         .forEach(({ node }) => {
           createPage({
@@ -39,78 +38,66 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     });
 }
 
-// changes thumbnail path to correct relative path 
-exports.onCreateNode = ({ node, getNode, loadNodeContent, boundActionCreators }) => {
-  const { createNode, createNodeField } = boundActionCreators
-  const { frontmatter } = node
-  if (frontmatter) {
-    const { thumbnail } = frontmatter
-    if (thumbnail) {
-      const value = path.relative(
-        path.dirname(node.fileAbsolutePath),
-        path.join(__dirname, '/src/', thumbnail)
-      )
-      if (thumbnail.indexOf('/images/uploads') === 0 ) {
-        // let value = path.relative(
-        //   path.dirname(node.fileAbsolutePath),
-        //   path.join(__dirname, '/static', thumbnail)
-        // );
-        // console.log(value);
-        createNodeField({
-          node,
-          name: `imagePath`,
-          value
-        });
-      } 
-    }
-  }
-}
-
-// exports.onCreateNode = ({ node, getNode, getNodes, boundActionCreators }) => {
-//   const { createNode, createNodeField } = boundActionCreators
-//   if (node.internal.type === `MarkdownRemark`) {
-//     // Create link
-//     // Find absolute path of linked path
-//     const pathToFile = path.resolve(getNode(node.parent).absolutePath, node.frontmatter.thumbnail)
-//     // Find ID of File node
-//     const fileNode = getNodes().find(n => n.absolutePath === pathToFile)
-//     createNodeField({
-//       node,
-//       name: `imageLink___NODE`,
-//       value: fileNode.id,
-//     })
-//   }
-//   // Transform the new node here and create a new node or
-//   // create a new node field.
-// }
-// let check = 1;
-
+//handles parent/child relationships between imageSharp nodes and gallery images.
 exports.onCreateNode = ({
-  node, getNode, getNodes, boundActionCreators,
+  node, getNode, getNodes, boundActionCreators, graphql
 }) => {
-  const { createNodeField, createParentChildLink } = boundActionCreators;
+  const { createNodeField, createParentChildLink, createNode } = boundActionCreators;
 
   if (node.internal.type === 'MarkdownRemark') {
-//     // Attach thumbnail's ImageSharp node by public path if necessary
     if (typeof node.frontmatter.thumbnail === 'string') {
       // Find absolute path of linked path
       const pathToFile = path
         .join(__dirname, 'src', node.frontmatter.thumbnail)
         .split(path.sep)
         .join('/');
+
       const fileNode = getNodes().find(n => n.absolutePath === pathToFile);
     
       if (fileNode != null) {
-        // console.log(fileNode.absolutePath)
         // Find ImageSharp node corresponding to the File node
         const imageSharpNodeId = fileNode.children.find(n => n.endsWith('>> ImageSharp'));
         const imageSharpNode = getNodes().find(n => n.id === imageSharpNodeId);
         // Add ImageSharp node as child
-      
         if(imageSharpNode) {
           createParentChildLink({ parent: node, child: imageSharpNode });
         }
       }
+    }
+    if (node.frontmatter.galleryImages) {
+      const galleryImageSharp = [];
+      //push each imageSharp node for each image into array
+      node.frontmatter.galleryImages.forEach((image, index) => {
+        const pathToFile = path
+          .join(__dirname, 'src', image)
+          .split(path.sep)
+          .join('/');
+        
+          const galleryImageNode = getNodes().find(n => n.absolutePath === pathToFile);
+          //add each galleryImageSharpNode to node
+          if (galleryImageNode != null) {
+            const galleryImageSharpNodeId = galleryImageNode.children.find(n => n.endsWith('>> ImageSharp'));
+            
+            const galleryImageSharpNode = getNodes().find(n => n.id === galleryImageSharpNodeId);
+            galleryImageSharp.push(galleryImageSharpNode);
+
+            if (galleryImageSharpNode) {
+              createParentChildLink({parent: node, child: galleryImageSharpNode})
+            }
+          }
+      });
+
+      //create note with array of imageSharpNodes and make child of markdown node
+      createNode({
+        galleryNodes: galleryImageSharp,
+        children: [],
+        parent: node.id,
+        id: `${node.frontmatter.title} gallery node`,
+        internal: {
+          type: `galleryImageSharp`,
+          contentDigest: 'temp'
+        }
+      });
     }
   }
 };

@@ -60,11 +60,10 @@ export const query = graphql`
           frontmatter {
             thumbnail
             path
-            title
-            
+            title 
           }
           childImageSharp {
-            sizes(maxWidth: 540) {
+            sizes(maxWidth: 700) {
               ...GatsbyImageSharpSizes
             }
           }
@@ -79,24 +78,12 @@ export const query = graphql`
   }
 `;
 
-
-
-// thumbnail {
-
-// }
-
-// {
-//   childImageSharp {
-//     sizes(maxWidth: 650) {
-//       ...GatsbyImageSharpSizes
-//     }
-//   }
-// }
-
-// {
-//   childImageSharp {
-//     sizes(maxWidth: 600) {
-//       ...GatsbyImageSharpSizes
+// allImageSharp {
+//   edges {
+//     node {
+//       sizes(maxWidth: 1000) {
+//         ...GatsbyImageSharpSizes
+//       }
 //     }
 //   }
 // }

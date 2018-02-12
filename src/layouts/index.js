@@ -35,7 +35,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <Link to="/" ><img className={(this.state.isActive ? "header-logo-active" : null) + " header-logo"} src={iconJTLogo} /></Link>
+        <Link to="/" ><img className={(this.state.isActive ? "header-logo-active" : null) + " header-logo"} src={iconJTLogo} alt="JT Construction logo"/></Link>
         <div className="header-burger-menu" onClick={this.handleClick}>
             <div className={(this.state.isActive ? "header-burger-top-active" : null) + " header-burger-top"}></div>
             <div className={(this.state.isActive ? "header-burger-middle-active" : null) + " header-burger-top"}></div>
