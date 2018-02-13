@@ -49,28 +49,39 @@ export const Gallery = ({data}) => {
   )
 }
 
-export default function Template({
-  data
-}) {
-  const { frontmatter } = data.markdownRemark;
+export const Template = ({
+  title, html, gallery
+}) => {
   return (
     <div>
-      <Helmet title={`Joe Thomas Construction - ${frontmatter.title}`} />
+      <Helmet title={`Joe Thomas Construction - ${title}`} />
       <div className="section main-gallery-info">
-        <h3 className="title">{frontmatter.title}</h3>
+        <h3 className="title">{title}</h3>
         <hr />
         <div className="main-gallery-details">
-          <p>{frontmatter.description}</p>
+        <div
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
         </div>
       </div>
       <div className="section main-gallery">
         <h3 className="title">Project Gallery</h3>
         <p>Select an image to view original.</p>
         <hr />
-          <Gallery data={data.markdownRemark.children} />
+          <Gallery data={gallery} />
       </div>
     </div>
   );
+}
+
+export default ({ data }) => {
+  const { frontmatter, html, children } = data.markdownRemark;
+  return <Template 
+    title={frontmatter.title}
+    html={html}
+    gallery={children}
+    />
 }
 
 export const pageQuery = graphql`

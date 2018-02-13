@@ -211,6 +211,8 @@ hr {
     text-align: center;
     max-width: 100%;
     margin: 0 auto;
+    opacity: 0;
+    animation: 1s fadein 0.4s forwards;
 }
 
 .hero-banner {
