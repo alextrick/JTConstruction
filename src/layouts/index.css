@@ -329,8 +329,6 @@ hr {
     padding-bottom: 2rem;
     max-width: 100%;
     max-height: 600px;
-    /* display: flex; */
-    /* justify-content: center; */
 }
 .main-gallery-image.gatsby-image-wrapper img {
     object-fit: contain;
